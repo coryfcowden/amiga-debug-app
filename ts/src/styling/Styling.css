@@ -1,0 +1,135 @@
+/*:root {
+  --exitRed: #C62323;
+  --brightBlue: #1F5DC2;
+  --mutedBlue: #7393C7;
+  --popupbackgroundLightGray: #ECECEC;
+  --darkGray: #707070;
+  --linkBlue: #197AE8;
+}
+*/
+
+:root {
+  --exitRed: #C62323;
+  --popupBackground: #ECECEC;
+  --buttonBorder: #808080;
+  --buttonText: #000000;
+}
+
+/* === Overall Popup === */
+.popup-container {
+  background: var(--popupBackground);
+  width: 948px;
+  height: 628px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Title === */
+.popup-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* === Back Button === */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 125px;
+  height: 51px;
+  background: #707070;
+  color: #fff;
+  border: none;
+  border-radius: 21px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* === Exit Button === */
+.exit-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 125px;
+  height: 51px;
+  background: var(--exitRed);
+  color: #fff;
+  border: none;
+  border-radius: 21px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exit-button svg {
+  margin-left: 8px;
+}
+
+/* === Square Buttons === */
+.square-button {
+  background: #ffffff;
+  border: 3px solid var(--buttonBorder);
+  border-radius: 20px;
+  width: 184px;
+  height: 184px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--buttonText);
+  margin-top: 0.5rem;
+}
+
+/* === Rectangle Buttons === */
+.rectangle-button {
+  background: #ffffff;
+  border: 3px solid var(--buttonBorder);
+  border-radius: 20px;
+  width: 495px;
+  height: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  font-size: 40px;
+  color: var(--buttonText);
+}
+
+/* === Flex Layout for Options === */
+.options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.options-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
