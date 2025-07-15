@@ -1,4 +1,4 @@
-import { useNavigate, Outlet, useParams } from 'react-router-dom';
+import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function MiscDetails() {
   const { miscName } = useParams();
@@ -6,10 +6,9 @@ function MiscDetails() {
 
   return (
     <div className="misc-details-container">
-
       <h5>{miscName?.toUpperCase()} Issue Options</h5>
 
-      {miscName === 'canbus' && (
+      {miscName === "canbus" && (
         <>
           <button onClick={() => navigate(`/immediate-assistance`)}>
             Not Communicating with Module(s)
@@ -23,7 +22,7 @@ function MiscDetails() {
         </>
       )}
 
-      {miscName === 'filter' && (
+      {miscName === "filter" && (
         <>
           <button onClick={() => navigate(`/immediate-assistance`)}>
             Incorrect Calibration
@@ -37,7 +36,7 @@ function MiscDetails() {
         </>
       )}
 
-      {miscName === 'wifi' && (
+      {miscName === "wifi" && (
         <>
           <button onClick={() => navigate(`/immediate-assistance`)}>
             Wifi not Connecting
@@ -51,7 +50,7 @@ function MiscDetails() {
         </>
       )}
 
-      {miscName === 'other' && (
+      {miscName === "other" && (
         <>
           <button onClick={() => navigate(`/immediate-assistance`)}>
             Reboot Error
@@ -68,7 +67,7 @@ function MiscDetails() {
       <Outlet />
 
       <br />
-      <button onClick={() => navigate('/misc')}>Back to misc</button>
+      <button onClick={() => navigate("/misc")}>Back to misc</button>
     </div>
   );
 }

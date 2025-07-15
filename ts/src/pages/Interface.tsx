@@ -1,32 +1,50 @@
-import { useNavigate, Outlet } from 'react-router-dom';
+import {
+  IoCloseCircleOutline,
+  IoHelpCircleOutline,
+  IoLayersOutline,
+} from "react-icons/io5";
+import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
+import { useNavigate, Outlet } from "react-router-dom";
 
 function Interface({}) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <div className="interface-container">
-            <button onClick={() => navigate('/')}>Exit</button>
+  return (
+    <div className="popup-container">
+      <button className="back-button" onClick={() => navigate(-1)}>
+        <VscArrowLeft /> Back
+      </button>
 
-            <h5>Interface Issue Options</h5>
+      <button className="exit-button" onClick={() => navigate("/")}>
+        Exit <VscChromeClose />
+      </button>
 
-            <button onClick={() => navigate('/interface/qr-1')}>
-                App(s) Disappeared (QR)
-            </button>
+      <h1 className="popup-title">Report Issue</h1>
 
-            <button onClick={() => navigate('/interface/qr-2')}>
-                Random Popups (QR)
-            </button>
+      <button
+        className="rectangle-button"
+        onClick={() => navigate("/interface/qr-1")}
+      >
+        <IoHelpCircleOutline size={113} /> App(s) Disappeared
+      </button>
 
-            <button onClick={() => navigate('/immediate-assistance')}>
-                Unresponsive
-            </button>
+      <button
+        className="rectangle-button"
+        onClick={() => navigate("/interface/qr-2")}
+      >
+        <IoLayersOutline size={113} /> Random Popups
+      </button>
 
-            <Outlet />
+      <button
+        className="rectangle-button"
+        onClick={() => navigate("/immediate-assistance")}
+      >
+        <IoCloseCircleOutline size={113} /> Unresponsive
+      </button>
 
-            <br />
-            <button onClick={() => navigate('/')}>Home</button>
-        </div>
-    );
+      <Outlet />
+    </div>
+  );
 }
 
 export default Interface;

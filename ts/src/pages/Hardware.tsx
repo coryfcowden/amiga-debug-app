@@ -1,6 +1,6 @@
-import { useNavigate, Outlet } from 'react-router-dom';
-import { VscArrowLeft, VscChromeClose } from 'react-icons/vsc';
-import { IoCropSharp } from 'react-icons/io5';
+import { useNavigate, Outlet } from "react-router-dom";
+import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
+import { IoCropSharp } from "react-icons/io5";
 
 function Hardware() {
   const navigate = useNavigate();
@@ -11,21 +11,30 @@ function Hardware() {
         <VscArrowLeft /> Back
       </button>
 
-      <button className="exit-button" onClick={() => navigate('/')}>
+      <button className="exit-button" onClick={() => navigate("/")}>
         Exit <VscChromeClose />
       </button>
 
       <h1 className="popup-title">Hardware Issue Options</h1>
 
-      <button className="rectangle-button" onClick={() => navigate('/hardware/qr-1')}>
-        <IoCropSharp size={113}/> Robot Geometry
+      <button
+        className="rectangle-button"
+        onClick={() => navigate("/hardware/qr-1")}
+      >
+        <IoCropSharp size={113} /> Robot Geometry
       </button>
 
-      <button className="rectangle-button" onClick={() => navigate('/immediate-assistance')}>
+      <button
+        className="rectangle-button"
+        onClick={() => navigate("/immediate-assistance")}
+      >
         <span>Misalignment</span>
       </button>
 
-      <button className="rectangle-button" onClick={() => navigate('/immediate-assistance')}>
+      <button
+        className="rectangle-button"
+        onClick={() => navigate("/immediate-assistance")}
+      >
         <span>Broken Part</span>
       </button>
 

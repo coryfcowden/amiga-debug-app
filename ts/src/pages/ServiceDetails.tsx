@@ -1,4 +1,4 @@
-import { useNavigate, Outlet, useParams } from 'react-router-dom';
+import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function ServiceDetails() {
   const { serviceName } = useParams();
@@ -6,10 +6,9 @@ function ServiceDetails() {
 
   return (
     <div className="service-details-container">
-
       <h5>{serviceName?.toUpperCase()} Issue Options</h5>
 
-      {serviceName === 'recorder' && (
+      {serviceName === "recorder" && (
         <>
           <button onClick={() => navigate(`/services/${serviceName}/qr`)}>
             Not Recording Data (QR)
@@ -23,7 +22,7 @@ function ServiceDetails() {
         </>
       )}
 
-      {serviceName === 'camera' && (
+      {serviceName === "camera" && (
         <>
           <button onClick={() => navigate(`/services/${serviceName}/qr`)}>
             Camera Not Working (QR)
@@ -37,7 +36,7 @@ function ServiceDetails() {
         </>
       )}
 
-      {serviceName === 'gps' && (
+      {serviceName === "gps" && (
         <>
           <button onClick={() => navigate(`/services/${serviceName}/qr`)}>
             GPS Not Working (QR)
@@ -54,7 +53,7 @@ function ServiceDetails() {
       <Outlet />
 
       <br />
-      <button onClick={() => navigate('/services')}>Back to Services</button>
+      <button onClick={() => navigate("/services")}>Back to Services</button>
     </div>
   );
 }

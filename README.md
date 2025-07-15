@@ -6,4 +6,6 @@ For the most up-to-date documentation on using this template repository, please 
 
 [amiga.farm-ng.com - **Developing Custom Applications**](https://amiga.farm-ng.com/docs/brain/brain-apps)
 
+debug report issue app that allows Amiga users to report an issue directly from the robot
+
 ---

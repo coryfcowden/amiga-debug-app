@@ -7,10 +7,10 @@ const ExitButton: React.FC = () => {
     const baseEndpoint = `http://${window.location.hostname}:8042/systemctl_action/`;
 
     const requestBody = {
-      account_name: appData.account, 
-      service_id: appData.name, 
+      account_name: appData.account,
+      service_id: appData.name,
       action: "stop",
-      app_route: appData.app_route
+      app_route: appData.app_route,
     };
 
     // request server start the service
