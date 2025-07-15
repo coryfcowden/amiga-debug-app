@@ -1,3 +1,9 @@
+import {
+  IoCameraOutline,
+  IoLocateSharp,
+  IoNavigateOutline,
+} from "react-icons/io5";
+import { VscArrowLeft, VscChromeClose, VscFileBinary } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function Services() {
@@ -7,25 +13,40 @@ function Services() {
   const serviceSelected = params.serviceName;
 
   return (
-    <div className="services-container">
-      <button onClick={() => navigate("/")}>Exit</button>
+    <div className="popup-container">
+      <button className="back-button" onClick={() => navigate(-1)}>
+        <VscArrowLeft /> Back
+      </button>
+
+      <button className="exit-button" onClick={() => navigate("/")}>
+        Exit <VscChromeClose />
+      </button>
+
+      <h1 className="popup-title">Report Issue</h1>
 
       {!serviceSelected && (
         <>
-          <h5>Services Issue Options</h5>
-
-          <button onClick={() => navigate("/services/recorder")}>
-            Recorder
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/services/recorder")}
+          >
+            <VscFileBinary size={113} /> Recorder
           </button>
-          <button onClick={() => navigate("/services/camera")}>Camera</button>
-          <button onClick={() => navigate("/services/gps")}>GPS</button>
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/services/camera")}
+          >
+            <IoCameraOutline size={113} /> Camera
+          </button>
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/services/gps")}
+          >
+            <IoNavigateOutline size={113} /> GPS
+          </button>
         </>
       )}
-
       <Outlet />
-
-      <br />
-      <button onClick={() => navigate("/")}>Home</button>
     </div>
   );
 }

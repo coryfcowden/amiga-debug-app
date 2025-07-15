@@ -1,20 +1,20 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import Autoplot from '../pages/Autoplot';
-import Hardware from '../pages/Hardware';
-import Interface from '../pages/Interface';
-import QR from '../pages/QR';
-import Services from '../pages/Services';
-import Misc from '../pages/Misc';
-import ImmediateAssistance from '../pages/ImmediateAssistance';
-import ServiceDetails from '../pages/ServiceDetails';
-import MiscDetails from '../pages/MiscDetails';
-import Background from '../pages/Background';
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import Autoplot from "../pages/Autoplot";
+import Hardware from "../pages/Hardware";
+import Interface from "../pages/Interface";
+import QR from "../pages/QR";
+import Services from "../pages/Services";
+import Misc from "../pages/Misc";
+import ImmediateAssistance from "../pages/ImmediateAssistance";
+import ServiceDetails from "../pages/ServiceDetails";
+import MiscDetails from "../pages/MiscDetails";
+import Background from "../pages/Background";
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Background/>} /> 
+      <Route path="/" element={<Background />} />
 
       <Route path="/report" element={<Home />} />
 

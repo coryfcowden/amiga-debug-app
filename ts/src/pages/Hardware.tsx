@@ -1,6 +1,10 @@
 import { useNavigate, Outlet } from "react-router-dom";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
-import { IoCropSharp } from "react-icons/io5";
+import {
+  IoAnalyticsOutline,
+  IoCloseCircleOutline,
+  IoCropSharp,
+} from "react-icons/io5";
 
 function Hardware() {
   const navigate = useNavigate();
@@ -28,14 +32,14 @@ function Hardware() {
         className="rectangle-button"
         onClick={() => navigate("/immediate-assistance")}
       >
-        <span>Misalignment</span>
+        <IoAnalyticsOutline size={113} /> Misalignment
       </button>
 
       <button
         className="rectangle-button"
         onClick={() => navigate("/immediate-assistance")}
       >
-        <span>Broken Part</span>
+        <IoCloseCircleOutline size={113} /> Broken Part
       </button>
 
       <Outlet />

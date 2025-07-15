@@ -1,3 +1,12 @@
+import {
+  IoAlertCircleOutline,
+  IoCloseCircle,
+  IoCloseCircleOutline,
+  IoHelpCircleOutline,
+  IoWifiOutline,
+  IoWifiSharp,
+} from "react-icons/io5";
+import { VscArrowLeft, VscChromeClose, VscSyncIgnored } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function MiscDetails() {
@@ -5,69 +14,110 @@ function MiscDetails() {
   const navigate = useNavigate();
 
   return (
-    <div className="misc-details-container">
-      <h5>{miscName?.toUpperCase()} Issue Options</h5>
+    <div className="popup-container">
+      <button className="back-button" onClick={() => navigate(-1)}>
+        <VscArrowLeft /> Back
+      </button>
+
+      <button className="exit-button" onClick={() => navigate("/")}>
+        Exit <VscChromeClose />
+      </button>
+
+      <h1 className="popup-title">Report Issue</h1>
 
       {miscName === "canbus" && (
         <>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Not Communicating with Module(s)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoCloseCircleOutline size={113} /> Not Communicating with Module(s)
           </button>
-          <button onClick={() => navigate(`/misc/${miscName}/qr`)}>
-            No Power (QR)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/misc/${miscName}/qr`)}
+          >
+            <IoAlertCircleOutline size={113} /> No Power
           </button>
-          <button onClick={() => navigate(`/misc/${miscName}/qr`)}>
-            Unknown CAN Bus Error (QR)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/misc/${miscName}/qr`)}
+          >
+            <IoHelpCircleOutline size={113} /> Unknown CAN Bus Error
           </button>
         </>
       )}
 
       {miscName === "filter" && (
         <>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Incorrect Calibration
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoCloseCircleOutline size={113} /> Incorrect Calibration
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Filter Error
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoAlertCircleOutline size={113} /> Filter Error
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Other
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoHelpCircleOutline size={113} /> Other
           </button>
         </>
       )}
 
       {miscName === "wifi" && (
         <>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Wifi not Connecting
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoWifiSharp size={113} /> Wifi not Connecting
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Poor Connection
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoAlertCircleOutline size={113} /> Poor Connection
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Cannot Connect to Farm Network
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoCloseCircleOutline size={113} /> Cannot Connect to Farm Network
           </button>
         </>
       )}
 
       {miscName === "other" && (
         <>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Reboot Error
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <VscSyncIgnored size={113} /> Reboot Error
           </button>
-          <button onClick={() => navigate(`/misc/${miscName}/qr`)}>
-            Unknown Error Code (QR)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/misc/${miscName}/qr`)}
+          >
+            <IoHelpCircleOutline size={113} /> Unknown Error Code
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Software Update Failure
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoCloseCircleOutline size={113} /> Software Update Failure
           </button>
         </>
       )}
 
       <Outlet />
-
-      <br />
-      <button onClick={() => navigate("/misc")}>Back to misc</button>
     </div>
   );
 }

@@ -1,3 +1,29 @@
+import {
+  FaFileUpload,
+  FaGasPump,
+  FaHandSparkles,
+  FaPowerOff,
+  FaSeedling,
+} from "react-icons/fa";
+import {
+  IoCameraReverseOutline,
+  IoCloseCircleOutline,
+  IoCloudUploadOutline,
+  IoHelpBuoyOutline,
+  IoHelpCircleOutline,
+  IoLocateOutline,
+  IoLogoElectron,
+  IoNavigateCircleOutline,
+  IoNavigateOutline,
+  IoPowerOutline,
+  IoSparklesOutline,
+} from "react-icons/io5";
+import {
+  VscArrowLeft,
+  VscChromeClose,
+  VscDatabase,
+  VscFileBinary,
+} from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function ServiceDetails() {
@@ -5,55 +31,87 @@ function ServiceDetails() {
   const navigate = useNavigate();
 
   return (
-    <div className="service-details-container">
-      <h5>{serviceName?.toUpperCase()} Issue Options</h5>
+    <div className="popup-container">
+      <button className="back-button" onClick={() => navigate(-1)}>
+        <VscArrowLeft /> Back
+      </button>
+
+      <button className="exit-button" onClick={() => navigate("/")}>
+        Exit <VscChromeClose />
+      </button>
+
+      <h1 className="popup-title">Report Issue</h1>
 
       {serviceName === "recorder" && (
         <>
-          <button onClick={() => navigate(`/services/${serviceName}/qr`)}>
-            Not Recording Data (QR)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/services/${serviceName}/qr`)}
+          >
+            <VscFileBinary size={113} /> Not Recording Data
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Incorrect Data
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <VscDatabase size={113} /> Inaccurate Data
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Data Upload Failure
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoCloudUploadOutline size={113} /> Data Upload Failure
           </button>
         </>
       )}
 
       {serviceName === "camera" && (
         <>
-          <button onClick={() => navigate(`/services/${serviceName}/qr`)}>
-            Camera Not Working (QR)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/services/${serviceName}/qr`)}
+          >
+            <IoCloseCircleOutline size={113} /> No Power to Camera
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Camera Feed Frozen
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoCameraReverseOutline size={113} /> Camera Feed Frozen
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Cannot Detect Crops/Rows
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <FaSeedling size={113} /> Cannot Detect Crops/Rows
           </button>
         </>
       )}
 
       {serviceName === "gps" && (
         <>
-          <button onClick={() => navigate(`/services/${serviceName}/qr`)}>
-            GPS Not Working (QR)
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/services/${serviceName}/qr`)}
+          >
+            <IoNavigateOutline size={113} /> GPS Not Working
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Inaccurate GPS Coordinates
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoLocateOutline size={113} /> Inaccurate GPS Coordinates
           </button>
-          <button onClick={() => navigate(`/immediate-assistance`)}>
-            Other
+          <button
+            className="rectangle-button"
+            onClick={() => navigate(`/immediate-assistance`)}
+          >
+            <IoHelpCircleOutline size={113} /> Other
           </button>
         </>
       )}
 
       <Outlet />
-
-      <br />
-      <button onClick={() => navigate("/services")}>Back to Services</button>
     </div>
   );
 }
