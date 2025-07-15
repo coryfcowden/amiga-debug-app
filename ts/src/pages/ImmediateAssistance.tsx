@@ -9,7 +9,7 @@ function ImmediateAssistance() {
 
   return (
     <div className="popup-container">
-        <button className="back-button" onClick={() => navigate('/')}>
+        <button className="back-button" onClick={() => navigate(-1)}>
             <VscArrowLeft /> Back 
         </button>
         

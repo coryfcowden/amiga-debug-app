@@ -9,11 +9,14 @@ import Misc from '../pages/Misc';
 import ImmediateAssistance from '../pages/ImmediateAssistance';
 import ServiceDetails from '../pages/ServiceDetails';
 import MiscDetails from '../pages/MiscDetails';
+import Background from '../pages/Background';
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Background/>} /> 
+
+      <Route path="/report" element={<Home />} />
 
       <Route path="/autoplot" element={<Autoplot />}>
         <Route path=":qrId" element={<QR />} />
@@ -40,7 +43,6 @@ function AppRoutes() {
       </Route>
 
       <Route path="/immediate-assistance" element={<ImmediateAssistance />} />
-
     </Routes>
   );
 }
