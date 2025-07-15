@@ -7,20 +7,16 @@ function Hardware() {
 
   return (
     <div className="popup-container">
-      {/* Back Button */}
       <button className="back-button" onClick={() => navigate(-1)}>
         <VscArrowLeft /> Back
       </button>
 
-      {/* Exit Button */}
       <button className="exit-button" onClick={() => navigate('/')}>
         Exit <VscChromeClose />
       </button>
 
-      {/* Title */}
       <h1 className="popup-title">Hardware Issue Options</h1>
 
-      {/* Options */}
       <button className="rectangle-button" onClick={() => navigate('/hardware/qr-1')}>
         <IoCropSharp size={113}/> Robot Geometry
       </button>

@@ -3,8 +3,6 @@ import { VscChromeClose, VscFileBinary, VscTerminalPowershell } from "react-icon
 import { IoAnalyticsOutline, IoCameraOutline, IoNavigateOutline, IoSettingsOutline, IoWifiSharp } from "react-icons/io5";
 import { FaFilter, FaNetworkWired } from "react-icons/fa";
 
-
-
 function Home() {
   const navigate = useNavigate();
 

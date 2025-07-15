@@ -1,5 +1,5 @@
 import { useNavigate, Outlet } from 'react-router-dom';
-import { VscArrowCircleRight, VscArrowLeft, VscArrowRight, VscArrowSmallRight } from 'react-icons/vsc';
+import { VscArrowLeft, VscArrowRight, VscChromeClose } from 'react-icons/vsc';
 import { IoAnalyticsOutline, IoCloseCircleOutline, IoHelpCircleOutline, IoShareSocialOutline } from 'react-icons/io5';
 
 function Autoplot() {
@@ -12,7 +12,7 @@ function Autoplot() {
       </button>
 
       <button className="exit-button" onClick={() => navigate('/')}>
-        Exit
+        Exit <VscChromeClose />
       </button>
 
       <h1 className="popup-title">Report Issue</h1>

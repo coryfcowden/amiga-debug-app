@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { IoCheckmarkCircleOutline, IoReceiptOutline } from 'react-icons/io5';
+import { VscArrowLeft, VscChromeClose } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
 
 function ImmediateAssistance() {
@@ -6,30 +8,45 @@ function ImmediateAssistance() {
   const navigate = useNavigate();
 
   return (
-    <div className="immediate-assistance-container">
-        <button onClick={() => navigate('/')}>
-                Exit
-            </button>
+    <div className="popup-container">
+        <button className="back-button" onClick={() => navigate('/')}>
+            <VscArrowLeft /> Back 
+        </button>
+        
+        <button className="exit-button" onClick={() => navigate('/')}>
+            Exit <VscChromeClose />
+        </button>
+
+        <h1 className="popup-title">Report Issue</h1>
 
       {!outcome && (
         <>
-          <p>Do you need immediate assistance?</p>
-          <button onClick={() => setOutcome('yes')}>Yes</button>
-          <button onClick={() => setOutcome('no')}>No, just report issue</button>
+          <h1>Do you need immediate assistance?</h1>
+
+          <button 
+            className="assistance-yes-button" 
+            onClick={() => setOutcome('yes')}>
+            <strong>Yes</strong><IoCheckmarkCircleOutline size={72}/>
+          </button>
+
+          <button 
+            className="assistance-no-button" 
+            onClick={() => setOutcome('no')}>
+            <IoReceiptOutline size={72}/> No, just report issue
+          </button>
         </>
       )}
 
       {outcome === 'yes' && (
         <>
-          <p>A Farm-ng member will reach out to you ASAP!</p>
-          <button onClick={() => navigate('/')}>Home</button>
+          <h1>A Farm-ng member will reach out to you ASAP!</h1>
         </>
       )}
 
       {outcome === 'no' && (
         <>
-          <p>Issue reported!</p>
-            <button onClick={() => navigate('/')}>Home</button>        </>
+          <h1>Issue reported!</h1>
+        </>
       )}
     </div>
   );
