@@ -1,3 +1,11 @@
+# amiga debug app!
+
+- i installed qrcode.react
+- im using an ESLint and Prettier extension
+- i installed React icons
+
+using:
+
 # amiga-app-template
 
 This repository is designed to streamline the creation of a new application deployable to the Amiga brain.

@@ -16,7 +16,7 @@ import {
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function ServiceDetails() {
-  const { serviceName } = useParams();
+  const { category } = useParams();
   const navigate = useNavigate();
 
   return (
@@ -31,11 +31,13 @@ function ServiceDetails() {
 
       <h1 className="popup-title">Report Issue</h1>
 
-      {serviceName === "recorder" && (
+      {category === "recorder" && (
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/services/${serviceName}/qr`)}
+            onClick={() =>
+              navigate(`/services/${category}/not-recording-data/qr`)
+            }
           >
             <VscFileBinary size={113} /> Not Recording Data
           </button>
@@ -54,17 +56,19 @@ function ServiceDetails() {
         </>
       )}
 
-      {serviceName === "camera" && (
+      {category === "camera" && (
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/services/${serviceName}/qr`)}
+            onClick={() => navigate(`/immediate-assistance`)}
           >
             <IoCloseCircleOutline size={113} /> No Power to Camera
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() =>
+              navigate(`/services/${category}/camera-feed-frozen/qr`)
+            }
           >
             <IoCameraReverseOutline size={113} /> Camera Feed Frozen
           </button>
@@ -77,17 +81,19 @@ function ServiceDetails() {
         </>
       )}
 
-      {serviceName === "gps" && (
+      {category === "gps" && (
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/services/${serviceName}/qr`)}
+            onClick={() =>
+              navigate(`/services/${category}/gps-not-connecting/qr`)
+            }
           >
-            <IoNavigateOutline size={113} /> GPS Not Working
+            <IoNavigateOutline size={113} /> GPS Not Connecting
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/services/${category}/inaccurate-gps/qr`)}
           >
             <IoLocateOutline size={113} /> Inaccurate GPS Coordinates
           </button>

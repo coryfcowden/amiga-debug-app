@@ -42,7 +42,7 @@ function Autoplot() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/autoplot/robot-follow/qr")}
+        onClick={() => navigate("/autoplot/robot-will-not-follow/qr")}
       >
         <VscArrowRight size={113} />
         <IoCloseCircleOutline size={72} />

@@ -7,7 +7,7 @@ function Misc() {
   const navigate = useNavigate();
   const params = useParams();
 
-  const miscSelected = params.miscName;
+  const miscSelected = params.category;
 
   return (
     <div className="popup-container">

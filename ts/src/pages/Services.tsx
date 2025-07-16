@@ -6,7 +6,7 @@ function Services() {
   const navigate = useNavigate();
   const params = useParams();
 
-  const serviceSelected = params.serviceName;
+  const serviceSelected = params.category;
 
   return (
     <div className="popup-container">

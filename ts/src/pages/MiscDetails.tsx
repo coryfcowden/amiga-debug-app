@@ -8,7 +8,7 @@ import { VscArrowLeft, VscChromeClose, VscSyncIgnored } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function MiscDetails() {
-  const { miscName } = useParams();
+  const { category } = useParams();
   const navigate = useNavigate();
 
   return (
@@ -23,7 +23,7 @@ function MiscDetails() {
 
       <h1 className="popup-title">Report Issue</h1>
 
-      {miscName === "canbus" && (
+      {category === "canbus" && (
         <>
           <button
             className="rectangle-button"
@@ -33,30 +33,30 @@ function MiscDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/misc/${miscName}/qr`)}
+            onClick={() => navigate(`/misc/${category}/canbus-no-power/qr`)}
           >
             <IoAlertCircleOutline size={113} /> No Power
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/misc/${miscName}/qr`)}
+            onClick={() => navigate(`/misc/${category}/canbus-error/qr`)}
           >
             <IoHelpCircleOutline size={113} /> Unknown CAN Bus Error
           </button>
         </>
       )}
 
-      {miscName === "filter" && (
+      {category === "filter" && (
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/misc/${category}/filter-calibration/qr`)}
           >
             <IoCloseCircleOutline size={113} /> Incorrect Calibration
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/misc/${category}/filter-error/qr`)}
           >
             <IoAlertCircleOutline size={113} /> Filter Error
           </button>
@@ -69,7 +69,7 @@ function MiscDetails() {
         </>
       )}
 
-      {miscName === "wifi" && (
+      {category === "wifi" && (
         <>
           <button
             className="rectangle-button"
@@ -92,7 +92,7 @@ function MiscDetails() {
         </>
       )}
 
-      {miscName === "other" && (
+      {category === "other" && (
         <>
           <button
             className="rectangle-button"
@@ -102,7 +102,7 @@ function MiscDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/misc/${miscName}/qr`)}
+            onClick={() => navigate(`/misc/${category}/unknown-error/qr`)}
           >
             <IoHelpCircleOutline size={113} /> Unknown Error Code
           </button>

@@ -37,7 +37,7 @@ function Interface({}) {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/immediate-assistance")}
+        onClick={() => navigate("/interface/unresponsive/qr")}
       >
         <IoCloseCircleOutline size={113} /> Unresponsive
       </button>
