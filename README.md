@@ -1,8 +1,10 @@
 # amiga debug app!
 
-- i installed qrcode.react
-- im using an ESLint and Prettier extension
-- i installed React icons
+## installations:
+
+- installed qrcode.react
+- using an ESLint and Prettier extension
+- installed React icons
 
 using:
 

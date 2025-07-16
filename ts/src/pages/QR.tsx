@@ -101,19 +101,22 @@ function QR() {
 
       <h1 className="popup-title">Report Issue</h1>
 
-      <h1 className="popup-title">
-        Scan this QR Code for relevant information on the Amiga Docs.
-      </h1>
+      <div className="qr-content">
+        <QRCodeSVG
+          value={qrData.url}
+          size={200}
+          level="Q"
+          bgColor="#ffffff"
+          fgColor="#000000"
+        />
+        <h1 className="qr-scan-text">
+          Scan this QR Code for relevant information.
+        </h1>
+      </div>
 
-      <QRCodeSVG
-        value={qrData.url}
-        size={200}
-        level="Q"
-        bgColor="#ffffff"
-        fgColor="#000000"
-      />
-
-      <p>{qrData.description}</p>
+      <a className="qr-link" href={qrData.url}>
+        {qrData.url}
+      </a>
 
       <button
         className="qr-help-button"

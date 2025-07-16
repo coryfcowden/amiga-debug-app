@@ -9,9 +9,11 @@ function ImmediateAssistance() {
 
   return (
     <div className="popup-container">
-      <button className="back-button" onClick={() => navigate(-1)}>
-        <VscArrowLeft /> Back
-      </button>
+      {!outcome && (
+        <button className="back-button" onClick={() => navigate(-1)}>
+          <VscArrowLeft /> Back
+        </button>
+      )}
 
       <button className="exit-button" onClick={() => navigate("/")}>
         Exit <VscChromeClose />
@@ -42,13 +44,15 @@ function ImmediateAssistance() {
 
       {outcome === "yes" && (
         <>
-          <h1>A Farm-ng member will reach out to you ASAP!</h1>
+          <h1 className="assistance-report-text">
+            A Farm-ng member will reach out to you ASAP!
+          </h1>
         </>
       )}
 
       {outcome === "no" && (
         <>
-          <h1>Issue reported!</h1>
+          <h1 className="assistance-report-text">Issue reported!</h1>
         </>
       )}
     </div>

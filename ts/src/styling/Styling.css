@@ -1,18 +1,13 @@
-/*:root {
-  --exitRed: #C62323;
-  --brightBlue: #1F5DC2;
-  --mutedBlue: #7393C7;
-  --popupbackgroundLightGray: #ECECEC;
-  --darkGray: #707070;
-  --linkBlue: #197AE8;
-}
-*/
-
 :root {
   --exitRed: #c62323;
-  --popupBackground: #ececec;
-  --buttonBorder: #808080;
-  --buttonText: #000000;
+  --brightBlue: #1f5dc2;
+  --mutedBlue: #7393c7;
+  --popupbackgroundLightGray: #ececec;
+  --darkGray: #707070;
+  --linkBlue: #197ae8;
+  --grayButtonBorder: #808080;
+  --brightBlueButtonBorder: #1044a8;
+  --mutedBlueButtonBorder: #3b5faa;
 }
 
 /* Launcher Page */
@@ -60,7 +55,7 @@
 
 /* Overall Popup */
 .popup-container {
-  background: var(--popupBackground);
+  background: var(--popupbackgroundLightGray);
   width: 948px;
   height: 628px;
   position: fixed;
@@ -133,7 +128,7 @@
 /* Square Buttons */
 .square-button {
   background: #ffffff;
-  border: 3px solid var(--buttonBorder);
+  border: 3px solid var(--grayButtonBorder);
   border-radius: 20px;
   width: 184px;
   height: 184px;
@@ -151,7 +146,7 @@
 /* Rectangle Buttons */
 .rectangle-button {
   background: #ffffff;
-  border: 3px solid var(--buttonBorder);
+  border: 3px solid var(--grayButtonBorder);
   border-radius: 20px;
   width: 495px;
   height: 138px;
@@ -174,7 +169,7 @@
   left: 132px;
   width: 278px;
   height: 170px;
-  background: #1f5dc2;
+  background: var(--brightBlue);
   color: #fff;
   border: 3px solid #1044a8;
   border-radius: 20px;
@@ -203,6 +198,16 @@
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistance-report-text {
+  font-size: 64px;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,8 +246,8 @@
 .qr-help-button {
   width: 360px;
   height: 100px;
-  background: #1f5dc2;
-  border: 3px solid #1f5dc2;
+  background: var(--brightBlue);
+  border: 3px solid #1044a8;
   border-radius: 20px;
   font-size: 36px;
   text-align: left;
@@ -256,4 +261,48 @@
   bottom: 20px;
   right: 20px;
   position: absolute;
+}
+
+.qr-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.qr-content svg {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  margin-right: 40px;
+  top: 150px;
+  right: 20px;
+  max-width: 50%;
+  position: absolute;
+}
+
+.qr-scan-text {
+  font-size: 64px;
+  text-align: left;
+  margin: 0;
+  padding-right: 30px;
+  flex-shrink: 1;
+  line-height: 1.2;
+  max-width: 40%;
+}
+
+.qr-link {
+  font-size: 24px;
+  text-align: left;
+  margin-top: 1rem;
+  color: var(--linkBlue);
+  text-decoration: none;
+  bottom: 35px;
+  left: 35px;
+  position: absolute;
+  max-width: 50%;
+  word-wrap: break-word;
+  text-decoration: underline;
 }

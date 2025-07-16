@@ -25,7 +25,6 @@ function AppRoutes() {
       <Route path="/hardware/:issue/qr" element={<QR />} />
 
       <Route path="/interface" element={<Interface />} />
-      <Route path="/interface/:issue" element={<QR />} />
       <Route path="/interface/:issue/qr" element={<QR />} />
 
       <Route path="/services" element={<Services />} />
