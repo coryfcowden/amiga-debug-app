@@ -1,9 +1,7 @@
 import {
   IoAlertCircleOutline,
-  IoCloseCircle,
   IoCloseCircleOutline,
   IoHelpCircleOutline,
-  IoWifiOutline,
   IoWifiSharp,
 } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose, VscSyncIgnored } from "react-icons/vsc";

@@ -19,11 +19,11 @@ function Hardware() {
         Exit <VscChromeClose />
       </button>
 
-      <h1 className="popup-title">Hardware Issue Options</h1>
+      <h1 className="popup-title">Report Issue</h1>
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/hardware/qr-1")}
+        onClick={() => navigate("/hardware/robot-geometry/qr")}
       >
         <IoCropSharp size={113} /> Robot Geometry
       </button>

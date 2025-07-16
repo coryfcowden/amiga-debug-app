@@ -23,14 +23,14 @@ function Interface({}) {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/interface/qr-1")}
+        onClick={() => navigate("/interface/apps-disappeared/qr")}
       >
         <IoHelpCircleOutline size={113} /> App(s) Disappeared
       </button>
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/interface/qr-2")}
+        onClick={() => navigate("/interface/random-popups/qr")}
       >
         <IoLayersOutline size={113} /> Random Popups
       </button>

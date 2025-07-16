@@ -33,7 +33,7 @@ function Autoplot() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/autoplot/qr-1")}
+        onClick={() => navigate("/autoplot/robot-off-path/qr")}
       >
         <IoShareSocialOutline size={106} />
         <IoHelpCircleOutline size={78} />
@@ -42,7 +42,7 @@ function Autoplot() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/autoplot/qr-2")}
+        onClick={() => navigate("/autoplot/robot-follow/qr")}
       >
         <VscArrowRight size={113} />
         <IoCloseCircleOutline size={72} />

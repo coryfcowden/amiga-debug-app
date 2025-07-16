@@ -1,8 +1,4 @@
-import {
-  IoCameraOutline,
-  IoLocateSharp,
-  IoNavigateOutline,
-} from "react-icons/io5";
+import { IoCameraOutline, IoNavigateOutline } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose, VscFileBinary } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 

@@ -1,22 +1,11 @@
-import {
-  FaFileUpload,
-  FaGasPump,
-  FaHandSparkles,
-  FaPowerOff,
-  FaSeedling,
-} from "react-icons/fa";
+import { FaSeedling } from "react-icons/fa";
 import {
   IoCameraReverseOutline,
   IoCloseCircleOutline,
   IoCloudUploadOutline,
-  IoHelpBuoyOutline,
   IoHelpCircleOutline,
   IoLocateOutline,
-  IoLogoElectron,
-  IoNavigateCircleOutline,
   IoNavigateOutline,
-  IoPowerOutline,
-  IoSparklesOutline,
 } from "react-icons/io5";
 import {
   VscArrowLeft,

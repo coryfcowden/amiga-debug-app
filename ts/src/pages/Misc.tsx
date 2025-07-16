@@ -1,9 +1,5 @@
 import { FaFilter, FaNetworkWired } from "react-icons/fa";
-import {
-  IoHelpCircleOutline,
-  IoHelpOutline,
-  IoWifiSharp,
-} from "react-icons/io5";
+import { IoHelpCircleOutline, IoWifiSharp } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 

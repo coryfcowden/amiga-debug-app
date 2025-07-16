@@ -7,8 +7,6 @@ import QR from "../pages/QR";
 import Services from "../pages/Services";
 import Misc from "../pages/Misc";
 import ImmediateAssistance from "../pages/ImmediateAssistance";
-import ServiceDetails from "../pages/ServiceDetails";
-import MiscDetails from "../pages/MiscDetails";
 import Background from "../pages/Background";
 
 function AppRoutes() {
@@ -19,27 +17,23 @@ function AppRoutes() {
       <Route path="/report" element={<Home />} />
 
       <Route path="/autoplot" element={<Autoplot />}>
-        <Route path=":qrId" element={<QR />} />
+        <Route path=":issue/qr" element={<QR />} />
       </Route>
 
       <Route path="/hardware" element={<Hardware />}>
-        <Route path=":qrId" element={<QR />} />
+        <Route path=":issue/qr" element={<QR />} />
       </Route>
 
       <Route path="/interface" element={<Interface />}>
-        <Route path=":qrId" element={<QR />} />
+        <Route path=":issue/qr" element={<QR />} />
       </Route>
 
       <Route path="/services" element={<Services />}>
-        <Route path=":serviceName" element={<ServiceDetails />}>
-          <Route path="qr" element={<QR />} />
-        </Route>
+        <Route path=":issue/qr" element={<QR />} />
       </Route>
 
       <Route path="/misc" element={<Misc />}>
-        <Route path=":miscName" element={<MiscDetails />}>
-          <Route path="qr" element={<QR />} />
-        </Route>
+        <Route path=":issue/qr" element={<QR />} />
       </Route>
 
       <Route path="/immediate-assistance" element={<ImmediateAssistance />} />
