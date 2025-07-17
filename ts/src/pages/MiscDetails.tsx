@@ -29,13 +29,13 @@ function MiscDetails() {
             className="rectangle-button"
             onClick={() => navigate(`/immediate-assistance`)}
           >
-            <IoCloseCircleOutline size={113} /> Not Communicating with Module(s)
+            <IoCloseCircleOutline size={153} /> Not Communicating with Module(s)
           </button>
           <button
             className="rectangle-button"
             onClick={() => navigate(`/misc/${category}/canbus-no-power/qr`)}
           >
-            <IoAlertCircleOutline size={113} /> No Power
+            <IoAlertCircleOutline size={83} /> No Power
           </button>
           <button
             className="rectangle-button"

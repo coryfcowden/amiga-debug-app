@@ -21,7 +21,7 @@
   padding: 0 2rem;
 }
 
-/* For 1106x773 screen */
+/* For 1106x773 Screen */
 .report-button {
   background: none;
   color: yellow;
@@ -87,14 +87,16 @@
   width: 125px;
   height: 51px;
   background: #707070;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 21px;
   font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .back-button svg {
@@ -111,14 +113,16 @@
   width: 125px;
   height: 51px;
   background: var(--exitRed);
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 21px;
   font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .exit-button svg {
@@ -127,7 +131,7 @@
 
 /* Square Buttons */
 .square-button {
-  background: #ffffff;
+  background: white;
   border: 3px solid var(--grayButtonBorder);
   border-radius: 20px;
   width: 184px;
@@ -145,7 +149,7 @@
 
 /* Rectangle Buttons */
 .rectangle-button {
-  background: #ffffff;
+  background: white;
   border: 3px solid var(--grayButtonBorder);
   border-radius: 20px;
   width: 495px;
@@ -156,7 +160,7 @@
   padding: 0 2rem;
   margin: 1rem 0;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 36px;
   color: var(--buttonText);
   font-family: Arial, Helvetica, sans-serif;
   text-align: right;
@@ -170,17 +174,17 @@
   width: 278px;
   height: 170px;
   background: var(--brightBlue);
-  color: #fff;
+  color: white;
   border: 3px solid #1044a8;
   border-radius: 20px;
   font-size: 48px;
   text-align: right;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .assistance-no-button {
@@ -190,7 +194,7 @@
   width: 278px;
   height: 170px;
   background: #7393c7;
-  color: #fff;
+  color: white;
   border: 3px solid #3b5faa;
   border-radius: 20px;
   font-size: 36px;
