@@ -246,55 +246,23 @@
   align-items: center;
 }
 
-/* QR Code Page */
-.qr-help-button {
-  width: 360px;
-  height: 100px;
-  background: var(--brightBlue);
-  border: 3px solid #1044a8;
-  border-radius: 20px;
-  font-size: 36px;
-  text-align: left;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  bottom: 20px;
-  right: 20px;
-  position: absolute;
-}
-
-.qr-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.qr-content svg {
-  width: 300px;
-  height: 300px;
+/* QR Page */
+.qr-svg {
+  width: 250px;
+  height: 250px;
   flex-shrink: 0;
-  margin-right: 40px;
-  top: 150px;
-  right: 20px;
+  align-items: center;
   max-width: 50%;
-  position: absolute;
 }
 
 .qr-scan-text {
-  font-size: 64px;
-  text-align: left;
+  font-size: 36px;
+  text-align: center;
   margin: 0;
-  padding-right: 30px;
   flex-shrink: 1;
   line-height: 1.2;
-  max-width: 40%;
+  max-width: 100%;
+  margin-bottom: 3.5rem;
 }
 
 .qr-link {
@@ -303,8 +271,8 @@
   margin-top: 1rem;
   color: var(--linkBlue);
   text-decoration: none;
-  bottom: 35px;
-  left: 35px;
+  bottom: 20px;
+  left: 20px;
   position: absolute;
   max-width: 50%;
   word-wrap: break-word;
@@ -336,16 +304,16 @@
 }
 
 .explanation-continue-button {
-  width: 212px;
+  width: 230px;
   height: 65px;
   background: var(--brightBlue);
   border: 3px solid #1044a8;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 24px;
   text-align: left;
   color: white;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;

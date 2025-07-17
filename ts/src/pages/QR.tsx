@@ -101,28 +101,27 @@ function QR() {
 
       <h1 className="popup-title">Report Issue</h1>
 
-      <div className="qr-content">
-        <QRCodeSVG
-          value={qrData.url}
-          size={200}
-          level="Q"
-          bgColor="#ffffff"
-          fgColor="#000000"
-        />
-        <h1 className="qr-scan-text">
-          Scan this QR Code for relevant information.
-        </h1>
-      </div>
+      <h1 className="qr-scan-text">
+        Scan this QR Code for relevant information.
+      </h1>
+      <QRCodeSVG
+        className="qr-svg"
+        value={qrData.url}
+        size={200}
+        level="Q"
+        bgColor="#ffffff"
+        fgColor="#000000"
+      />
 
       <a className="qr-link" href={qrData.url}>
         {qrData.url}
       </a>
 
       <button
-        className="qr-help-button"
+        className="explanation-continue-button"
         onClick={() => navigate("/explanation")}
       >
-        <strong>I Need Help</strong> <VscArrowRight size={77} />
+        <strong>I Need Help</strong> <VscArrowRight size={40} />
       </button>
     </div>
   );
