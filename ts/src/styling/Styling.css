@@ -310,3 +310,47 @@
   word-wrap: break-word;
   text-decoration: underline;
 }
+
+/* Explanation Page */
+.explanation-textarea {
+  max-width: 80%;
+  width: 814px;
+  height: 300px;
+  border-radius: 20px;
+  border: 2px solid var(--grayButtonBorder);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+}
+
+.explanation-title {
+  width: 814px;
+  max-width: 80%;
+  font-size: 32px;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.explanation-textarea:focus {
+  outline: none;
+  border: 2px solid var(--brightBlue);
+}
+
+.explanation-continue-button {
+  width: 212px;
+  height: 65px;
+  background: var(--brightBlue);
+  border: 3px solid #1044a8;
+  border-radius: 10px;
+  font-size: 24px;
+  text-align: left;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 20px;
+  right: 20px;
+  position: absolute;
+}

@@ -27,7 +27,7 @@ function MiscDetails() {
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoCloseCircleOutline size={153} /> Not Communicating with Module(s)
           </button>
@@ -62,7 +62,7 @@ function MiscDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoHelpCircleOutline size={113} /> Other
           </button>
@@ -73,19 +73,19 @@ function MiscDetails() {
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoWifiSharp size={113} /> Wifi not Connecting
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoAlertCircleOutline size={113} /> Poor Connection
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoCloseCircleOutline size={113} /> Cannot Connect to Farm Network
           </button>
@@ -96,7 +96,7 @@ function MiscDetails() {
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <VscSyncIgnored size={113} /> Reboot Error
           </button>
@@ -108,7 +108,7 @@ function MiscDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoCloseCircleOutline size={113} /> Software Update Failure
           </button>

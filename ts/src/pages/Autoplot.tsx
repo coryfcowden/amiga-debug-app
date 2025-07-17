@@ -24,7 +24,7 @@ function Autoplot() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/immediate-assistance")}
+        onClick={() => navigate("/explanation")}
       >
         <IoAnalyticsOutline size={106} />
         <IoAnalyticsOutline size={106} />

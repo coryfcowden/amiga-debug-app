@@ -43,13 +43,13 @@ function ServiceDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <VscDatabase size={113} /> Inaccurate Data
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoCloudUploadOutline size={113} /> Data Upload Failure
           </button>
@@ -60,7 +60,7 @@ function ServiceDetails() {
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoCloseCircleOutline size={113} /> No Power to Camera
           </button>
@@ -74,7 +74,7 @@ function ServiceDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <FaSeedling size={113} /> Cannot Detect Crops/Rows
           </button>
@@ -99,7 +99,7 @@ function ServiceDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/immediate-assistance`)}
+            onClick={() => navigate(`/explanation`)}
           >
             <IoHelpCircleOutline size={113} /> Other
           </button>

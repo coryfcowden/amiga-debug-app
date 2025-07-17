@@ -10,6 +10,7 @@ import Misc from "../pages/Misc";
 import MiscDetails from "../pages/MiscDetails";
 import ImmediateAssistance from "../pages/ImmediateAssistance";
 import Background from "../pages/Background";
+import Explanation from "../pages/Explanation";
 
 function AppRoutes() {
   return (
@@ -34,6 +35,8 @@ function AppRoutes() {
       <Route path="/misc" element={<Misc />} />
       <Route path="/misc/:category" element={<MiscDetails />} />
       <Route path="/misc/:category/:issue/qr" element={<QR />} />
+
+      <Route path="/explanation" element={<Explanation />}></Route>
 
       <Route path="/immediate-assistance" element={<ImmediateAssistance />} />
     </Routes>

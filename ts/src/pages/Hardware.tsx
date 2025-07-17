@@ -30,14 +30,14 @@ function Hardware() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/immediate-assistance")}
+        onClick={() => navigate("/explanation")}
       >
         <IoAnalyticsOutline size={113} /> Misalignment
       </button>
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/immediate-assistance")}
+        onClick={() => navigate("/explanation")}
       >
         <IoCloseCircleOutline size={113} /> Broken Part
       </button>

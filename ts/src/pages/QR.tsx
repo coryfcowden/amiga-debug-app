@@ -120,7 +120,7 @@ function QR() {
 
       <button
         className="qr-help-button"
-        onClick={() => navigate("/immediate-assistance")}
+        onClick={() => navigate("/explanation")}
       >
         <strong>I Need Help</strong> <VscArrowRight size={77} />
       </button>
