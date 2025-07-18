@@ -23,7 +23,9 @@ function ImmediateAssistance() {
 
       {!outcome && (
         <>
-          <h1>Do you need immediate assistance?</h1>
+          <h1 className="assistance-title">
+            Do you need immediate assistance?
+          </h1>
 
           <button
             className="assistance-yes-button"

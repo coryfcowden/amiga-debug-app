@@ -167,12 +167,18 @@
 }
 
 /* Immediate Assistance Buttons */
+.assistance-title {
+  font-size: 50px;
+  max-width: 70%;
+  text-align: center;
+}
+
 .assistance-yes-button {
   position: absolute;
   bottom: 151px;
   left: 132px;
   width: 278px;
-  height: 170px;
+  height: 150px;
   background: var(--brightBlue);
   color: white;
   border: 3px solid #1044a8;
@@ -192,19 +198,19 @@
   bottom: 151px;
   right: 132px;
   width: 278px;
-  height: 170px;
+  height: 150px;
   background: #7393c7;
   color: white;
   border: 3px solid #3b5faa;
   border-radius: 20px;
-  font-size: 36px;
+  font-size: 32px;
   text-align: right;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .assistance-report-text {
@@ -290,17 +296,17 @@
   font-size: 28px;
 }
 
+.explanation-textarea:focus {
+  outline: none;
+  border: 2px solid var(--brightBlue);
+}
+
 .explanation-title {
   width: 814px;
   max-width: 80%;
   font-size: 32px;
   text-align: left;
   margin-bottom: 0.5rem;
-}
-
-.explanation-textarea:focus {
-  outline: none;
-  border: 2px solid var(--brightBlue);
 }
 
 .explanation-continue-button {
