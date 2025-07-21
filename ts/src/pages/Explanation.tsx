@@ -21,8 +21,16 @@ function Explanation() {
       <h1 className="explanation-title">Explanation</h1>
 
       <textarea
-        className="explanation-textarea"
+        className="explanation-textarea-1"
         placeholder=" Describe your issue in more detail"
+        onChange={(e) => setDescription(e.target.value)}
+      />
+
+      <h1 className="explanation-title">Where can we contact you?</h1>
+
+      <textarea
+        className="explanation-textarea-2"
+        placeholder=" example@gmail.com"
         onChange={(e) => setDescription(e.target.value)}
       />
 
