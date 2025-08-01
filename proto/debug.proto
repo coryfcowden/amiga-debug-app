@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package issue;
+
+service issueReporter {
+    rpc ReportIssue (IssueRequest) returns (IssueResponse);
+}
+
+message issueRequest {
+    string userEmail = 1;
+    string userDescription = 2;
+    string category = 3;
+    string subCategory = 4;
+    bool urgent = 5;
+
+    string timestamp = 6;
+    string location = 7;
+    string motorData = 8;
+}
+
+message issueResponse {
+    bool success = 1;
+    string message = 2;
+}
