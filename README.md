@@ -6,6 +6,8 @@
 - installed qrcode.react
 - using an ESLint and Prettier extension
 - installed React icons
+- installed grpc-web
+- installed protoc
 
 using:
 
