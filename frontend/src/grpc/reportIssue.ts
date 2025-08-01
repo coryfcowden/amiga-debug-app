@@ -24,14 +24,14 @@ export function reportIssue({
 }) {
   const request = new issueRequest();
 
-  request.setUseremail(userEmail);
-  request.setUserdescription(userDescription);
+  request.setUserEmail(userEmail);
+  request.setUserDescription(userDescription);
   request.setCategory(category);
   request.setSubcategory(subcategory);
   request.setUrgent(urgent);
   request.setTimestamp(timestamp);
   request.setLocation(location);
-  request.setMotordata(motorData);
+  request.setMotorData(motorData);
 
   return new Promise((resolve, reject) => {
     client.reportIssue(request, {}, (err, response) => {

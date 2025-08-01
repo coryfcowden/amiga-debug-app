@@ -2,11 +2,11 @@
 import * as jspb from "google-protobuf";
 
 export class issueRequest extends jspb.Message {
-  getUseremail(): string;
-  setUseremail(value: string): issueRequest;
+  getUserEmail(): string;
+  setUserEmail(value: string): issueRequest;
 
-  getUserdescription(): string;
-  setUserdescription(value: string): issueRequest;
+  getUserDescription(): string;
+  setUserDescription(value: string): issueRequest;
 
   getCategory(): string;
   setCategory(value: string): issueRequest;
@@ -23,8 +23,8 @@ export class issueRequest extends jspb.Message {
   getLocation(): string;
   setLocation(value: string): issueRequest;
 
-  getMotordata(): string;
-  setMotordata(value: string): issueRequest;
+  getMotorData(): string;
+  setMotorData(value: string): issueRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): issueRequest.AsObject;

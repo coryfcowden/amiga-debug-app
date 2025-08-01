@@ -142,11 +142,11 @@ proto.issue.issueRequest.deserializeBinaryFromReader = function (msg, reader) {
     switch (field) {
       case 1:
         var value = /** @type {string} */ (reader.readString());
-        msg.setUseremail(value);
+        msg.setUserEmail(value);
         break;
       case 2:
         var value = /** @type {string} */ (reader.readString());
-        msg.setUserdescription(value);
+        msg.setUserDescription(value);
         break;
       case 3:
         var value = /** @type {string} */ (reader.readString());
@@ -170,7 +170,7 @@ proto.issue.issueRequest.deserializeBinaryFromReader = function (msg, reader) {
         break;
       case 8:
         var value = /** @type {string} */ (reader.readString());
-        msg.setMotordata(value);
+        msg.setMotorData(value);
         break;
       default:
         reader.skipField();
@@ -199,11 +199,11 @@ proto.issue.issueRequest.prototype.serializeBinary = function () {
  */
 proto.issue.issueRequest.serializeBinaryToWriter = function (message, writer) {
   var f = undefined;
-  f = message.getUseremail();
+  f = message.getUserEmail();
   if (f.length > 0) {
     writer.writeString(1, f);
   }
-  f = message.getUserdescription();
+  f = message.getUserDescription();
   if (f.length > 0) {
     writer.writeString(2, f);
   }
@@ -227,7 +227,7 @@ proto.issue.issueRequest.serializeBinaryToWriter = function (message, writer) {
   if (f.length > 0) {
     writer.writeString(7, f);
   }
-  f = message.getMotordata();
+  f = message.getMotorData();
   if (f.length > 0) {
     writer.writeString(8, f);
   }
@@ -237,7 +237,7 @@ proto.issue.issueRequest.serializeBinaryToWriter = function (message, writer) {
  * optional string userEmail = 1;
  * @return {string}
  */
-proto.issue.issueRequest.prototype.getUseremail = function () {
+proto.issue.issueRequest.prototype.getUserEmail = function () {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -245,7 +245,7 @@ proto.issue.issueRequest.prototype.getUseremail = function () {
  * @param {string} value
  * @return {!proto.issue.issueRequest} returns this
  */
-proto.issue.issueRequest.prototype.setUseremail = function (value) {
+proto.issue.issueRequest.prototype.setUserEmail = function (value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -253,7 +253,7 @@ proto.issue.issueRequest.prototype.setUseremail = function (value) {
  * optional string userDescription = 2;
  * @return {string}
  */
-proto.issue.issueRequest.prototype.getUserdescription = function () {
+proto.issue.issueRequest.prototype.getUserDescription = function () {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -261,7 +261,7 @@ proto.issue.issueRequest.prototype.getUserdescription = function () {
  * @param {string} value
  * @return {!proto.issue.issueRequest} returns this
  */
-proto.issue.issueRequest.prototype.setUserdescription = function (value) {
+proto.issue.issueRequest.prototype.setUserDescription = function (value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -351,7 +351,7 @@ proto.issue.issueRequest.prototype.setLocation = function (value) {
  * optional string motorData = 8;
  * @return {string}
  */
-proto.issue.issueRequest.prototype.getMotordata = function () {
+proto.issue.issueRequest.prototype.getMotorData = function () {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -359,7 +359,7 @@ proto.issue.issueRequest.prototype.getMotordata = function () {
  * @param {string} value
  * @return {!proto.issue.issueRequest} returns this
  */
-proto.issue.issueRequest.prototype.setMotordata = function (value) {
+proto.issue.issueRequest.prototype.setMotorData = function (value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
