@@ -2,10 +2,6 @@ syntax = "proto3";
 
 package issue;
 
-service issueReporter {
-    rpc ReportIssue (IssueRequest) returns (IssueResponse);
-}
-
 message issueRequest {
     string userEmail = 1;
     string userDescription = 2;
@@ -21,4 +17,8 @@ message issueRequest {
 message issueResponse {
     bool success = 1;
     string message = 2;
+}
+
+service issueReporter {
+    rpc ReportIssue (issueRequest) returns (issueResponse);
 }

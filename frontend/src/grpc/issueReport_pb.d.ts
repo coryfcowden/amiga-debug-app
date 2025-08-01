@@ -1,0 +1,72 @@
+import * as jspb from 'google-protobuf'
+
+
+
+export class issueRequest extends jspb.Message {
+  getUseremail(): string;
+  setUseremail(value: string): issueRequest;
+
+  getUserdescription(): string;
+  setUserdescription(value: string): issueRequest;
+
+  getCategory(): string;
+  setCategory(value: string): issueRequest;
+
+  getSubcategory(): string;
+  setSubcategory(value: string): issueRequest;
+
+  getUrgent(): boolean;
+  setUrgent(value: boolean): issueRequest;
+
+  getTimestamp(): string;
+  setTimestamp(value: string): issueRequest;
+
+  getLocation(): string;
+  setLocation(value: string): issueRequest;
+
+  getMotordata(): string;
+  setMotordata(value: string): issueRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): issueRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: issueRequest): issueRequest.AsObject;
+  static serializeBinaryToWriter(message: issueRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): issueRequest;
+  static deserializeBinaryFromReader(message: issueRequest, reader: jspb.BinaryReader): issueRequest;
+}
+
+export namespace issueRequest {
+  export type AsObject = {
+    useremail: string,
+    userdescription: string,
+    category: string,
+    subcategory: string,
+    urgent: boolean,
+    timestamp: string,
+    location: string,
+    motordata: string,
+  }
+}
+
+export class issueResponse extends jspb.Message {
+  getSuccess(): boolean;
+  setSuccess(value: boolean): issueResponse;
+
+  getMessage(): string;
+  setMessage(value: string): issueResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): issueResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: issueResponse): issueResponse.AsObject;
+  static serializeBinaryToWriter(message: issueResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): issueResponse;
+  static deserializeBinaryFromReader(message: issueResponse, reader: jspb.BinaryReader): issueResponse;
+}
+
+export namespace issueResponse {
+  export type AsObject = {
+    success: boolean,
+    message: string,
+  }
+}
+
