@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  node-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9091:9090"  # gRPC server
+    networks:
+      - grpc-net
+
+  envoy:
+    image: envoyproxy/envoy:v1.27-latest
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    ports:
+      - "8081:8081"  # frontend connects to this
+    depends_on:
+      - node-server
+    networks:
+      - grpc-net
+
+networks:
+  grpc-net:
+    driver: bridge

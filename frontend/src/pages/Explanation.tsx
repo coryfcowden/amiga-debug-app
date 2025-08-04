@@ -7,6 +7,7 @@ function Explanation() {
 
   const [userDescription, setUserDescription] = React.useState<string>("");
   const [userEmail, setUserEmail] = React.useState<string>("");
+
   return (
     <div className="popup-container">
       <button className="back-button" onClick={() => navigate(-1)}>
