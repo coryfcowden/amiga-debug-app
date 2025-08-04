@@ -3,7 +3,7 @@ import { issueRequest } from "./issueReport_pb";
 
 const client = new issueReporterClient("http://localhost:8080", null, null);
 
-export function reportIssue({
+export function issueReport({
   userEmail,
   userDescription,
   category,
@@ -34,7 +34,7 @@ export function reportIssue({
   request.setMotorData(motorData);
 
   return new Promise((resolve, reject) => {
-    client.reportIssue(request, {}, (err, response) => {
+    client.issueReport(request, {}, (err, response) => {
       if (err) {
         reject(err);
       } else {

@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 function Explanation() {
   const navigate = useNavigate();
 
-  const [description, setDescription] = React.useState<string>("");
+  const [userDescription, setUserDescription] = React.useState<string>("");
+  const [userEmail, setUserEmail] = React.useState<string>("");
   return (
     <div className="popup-container">
       <button className="back-button" onClick={() => navigate(-1)}>
@@ -23,7 +24,7 @@ function Explanation() {
       <textarea
         className="explanation-textarea-1"
         placeholder=" Describe your issue in more detail"
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(e) => setUserDescription(e.target.value)}
       />
 
       <h1 className="explanation-title">Where can we contact you?</h1>
@@ -31,7 +32,7 @@ function Explanation() {
       <textarea
         className="explanation-textarea-2"
         placeholder=" example@gmail.com"
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(e) => setUserEmail(e.target.value)}
       />
 
       <button

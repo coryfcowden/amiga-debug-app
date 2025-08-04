@@ -50,12 +50,12 @@ export class issueReporterClient {
     issueReport_pb.issueResponse.deserializeBinary,
   );
 
-  reportIssue(
+  issueReport(
     request: issueReport_pb.issueRequest,
     metadata?: grpcWeb.Metadata | null,
   ): Promise<issueReport_pb.issueResponse>;
 
-  reportIssue(
+  issueReport(
     request: issueReport_pb.issueRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (
@@ -64,7 +64,7 @@ export class issueReporterClient {
     ) => void,
   ): grpcWeb.ClientReadableStream<issueReport_pb.issueResponse>;
 
-  reportIssue(
+  issueReport(
     request: issueReport_pb.issueRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (
