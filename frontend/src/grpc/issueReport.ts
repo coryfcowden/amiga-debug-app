@@ -1,7 +1,7 @@
 import { issueReporterClient } from "./IssueReportServiceClientPb";
 import { issueRequest } from "./issueReport_pb";
 
-const client = new issueReporterClient("http://localhost:8081", null, null);
+const client = new issueReporterClient("http://localhost:8080", null, null);
 
 export function issueReport({
   userEmail,

@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9091:9090"  # gRPC server
+      - "9090:9090"  # gRPC server
     networks:
       - grpc-net
 
@@ -15,7 +15,7 @@ services:
     volumes:
       - ./envoy.yaml:/etc/envoy/envoy.yaml
     ports:
-      - "8081:8081"  # frontend connects to this
+      - "8080:8080"  # frontend connects to this
     depends_on:
       - node-server
     networks:

@@ -1,10 +1,20 @@
+# Use an official Node.js runtime as a base image
 FROM node:lts-alpine
-ENV NODE_ENV=production
+
+# Set working directory
 WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including devDependencies)
+RUN npm install
+
+# Copy the rest of the source code
 COPY . .
-EXPOSE 3000
-RUN chown -R node /usr/src/app
-USER node
-CMD ["npm", "start"]
+
+# Expose the port your server listens on
+EXPOSE 9090
+
+# Run the server using ts-node
+CMD ["npx", "ts-node", "backend/server.ts"]
