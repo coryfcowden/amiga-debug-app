@@ -1,4 +1,5 @@
 # amiga debug app!
+
 ### this is for the old stack!
 
 ## installations:
@@ -8,6 +9,8 @@
 - installed React icons
 - installed grpc-web
 - installed protoc
+- using envoy proxy
+- using Docker
 
 using:
 
