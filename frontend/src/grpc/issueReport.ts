@@ -1,5 +1,5 @@
 import { issueReporterClient } from "./IssueReportServiceClientPb";
-import { issueRequest } from "./issueReport_pb";
+import { issueRequest } from "./issueReport_pb.d";
 
 const client = new issueReporterClient("http://localhost:8080", null, null);
 
@@ -24,17 +24,17 @@ export function issueReport({
 }) {
   const request = new issueRequest();
 
-  request.setUserEmail(userEmail);
-  request.setUserDescription(userDescription);
+  request.setUseremail(userEmail);
+  request.setUserdescription(userDescription);
   request.setCategory(category);
   request.setSubcategory(subcategory);
   request.setUrgent(urgent);
   request.setTimestamp(timestamp);
   request.setLocation(location);
-  request.setMotorData(motorData);
+  request.setMotordata(motorData);
 
   return new Promise((resolve, reject) => {
-    client.issueReport(request, {}, (err, response) => {
+    client.reportIssue(request, {}, (err, response) => {
       if (err) {
         reject(err);
       } else {

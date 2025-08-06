@@ -2,10 +2,31 @@ import { useState } from "react";
 import { IoCheckmarkCircleOutline, IoReceiptOutline } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
+import { issueReport } from "../grpc/issueReport";
 
 function ImmediateAssistance() {
   const [outcome, setOutcome] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  //right now set up with dummy data to test grpc
+  const handleSendReport = async () => {
+    try {
+      const res = await issueReport({
+        userEmail: "test@example.com",
+        userDescription: "Test issue from frontend",
+        category: "Autoplot",
+        subcategory: "Not Following",
+        urgent: true,
+        timestamp: new Date().toISOString(),
+        location: "36°55′12″N 121°45′49″W",
+        motorData: "ESTOPPED",
+      });
+      alert("Server response: " + res);
+    } catch (err) {
+      console.error("gRPC call failed:", err);
+      alert("Failed to report issue");
+    }
+  };
 
   return (
     <div className="popup-container">
@@ -29,7 +50,10 @@ function ImmediateAssistance() {
 
           <button
             className="assistance-yes-button"
-            onClick={() => setOutcome("yes")}
+            onClick={async () => {
+              await handleSendReport();
+              setOutcome("yes");
+            }}
           >
             <strong>Yes</strong>
             <IoCheckmarkCircleOutline size={72} />
@@ -37,7 +61,10 @@ function ImmediateAssistance() {
 
           <button
             className="assistance-no-button"
-            onClick={() => setOutcome("no")}
+            onClick={async () => {
+              await handleSendReport();
+              setOutcome("no");
+            }}
           >
             <IoReceiptOutline size={72} /> No, just report issue
           </button>

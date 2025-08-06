@@ -1,15 +1,16 @@
 {
   "services": {
     "example-app": {
-      "name": "example-app",
+      "name": "debug-app",
       "type": "app",
       "exec_cmd": "/mnt/managed_home/farm-ng-user-corycowden/amiga-app-template/venv/bin/python3 /mnt/managed_home/farm-ng-user-corycowden/amiga-app-template/main.py",
       "args": [
-        "--config /mnt/managed_home/farm-ng-user-corycowden/amiga-app-template/config.json", "--port 8042"
+        "--config /mnt/managed_home/farm-ng-user-corycowden/amiga-app-template/config.json",
+        "--port 8042"
       ],
       "autostart": true,
       "app_route": "8042",
-      "display_name": "Monitor App"
+      "display_name": "Debug App"
     }
   }
 }
