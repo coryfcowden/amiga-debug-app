@@ -1,8 +1,4 @@
-import {
-  IoCloseCircleOutline,
-  IoHelpCircleOutline,
-  IoLayersOutline,
-} from "react-icons/io5";
+import { IoCloseCircleOutline, IoHelpCircleOutline } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate, Outlet } from "react-router-dom";
 
@@ -26,13 +22,6 @@ function Interface({}) {
         onClick={() => navigate("/interface/apps-disappeared/qr")}
       >
         <IoHelpCircleOutline size={113} /> App(s) Disappeared
-      </button>
-
-      <button
-        className="rectangle-button"
-        onClick={() => navigate("/interface/random-popups/qr")}
-      >
-        <IoLayersOutline size={113} /> Random Popups
       </button>
 
       <button

@@ -9,6 +9,10 @@ function QR() {
 
   const qrCodeMap: Record<string, { url: string; description: string }> = {
     // Autoplot
+    "path-not-smooth": {
+      url: "https://amiga.farm-ng.com/docs/apps/launcher/#track-following",
+      description: "Path Not Smooth",
+    },
     "robot-off-path": {
       url: "https://amiga.farm-ng.com/docs/apps/autoplot_app/#troubleshooting",
       description: "Robot Off Path",
@@ -24,22 +28,14 @@ function QR() {
     },
     // Interface
     "apps-disappeared": {
-      url: "https://amiga.farm-ng.com/docs/brain/brain-apps-manifest#troubleshooting",
+      url: "https://amiga.farm-ng.com/docs/brain/brain-apps-manifest/",
       description: "Apps Disappeared",
-    },
-    "random-popups": {
-      url: "https://amiga.farm-ng.com/docs/reference/faq/#brain-app-development",
-      description: "Random Popups",
     },
     unresponsive: {
       url: "https://discourse.farm-ng.com/t/display-is-not-so-responsive/513",
       description: "Unresponsive",
     },
     // Services
-    "not-recording-data": {
-      url: "https://amiga.farm-ng.com/docs/concepts/recorder_service/",
-      description: "Recorder Not Recording Data",
-    },
     "camera-feed-frozen": {
       url: "https://discourse.farm-ng.com/t/oak-camera-issue/339",
       description: "Camera Feed Frozen",
@@ -51,6 +47,10 @@ function QR() {
     "inaccurate-gps": {
       url: "https://discourse.farm-ng.com/t/gps-values-wandering-until-divergence/407",
       description: "Inaccurate GPS Coordinates",
+    },
+    "cant-ping-cameras": {
+      url: "https://amiga.farm-ng.com/docs/intelligence-kit/overview-intel#poe-switch",
+      description: "Can't Ping Cameras",
     },
     // Misc
     "canbus-no-power": {

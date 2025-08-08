@@ -31,31 +31,6 @@ function ServiceDetails() {
 
       <h1 className="popup-title">Report Issue</h1>
 
-      {category === "recorder" && (
-        <>
-          <button
-            className="rectangle-button"
-            onClick={() =>
-              navigate(`/services/${category}/not-recording-data/qr`)
-            }
-          >
-            <VscFileBinary size={113} /> Not Recording Data
-          </button>
-          <button
-            className="rectangle-button"
-            onClick={() => navigate(`/explanation`)}
-          >
-            <VscDatabase size={113} /> Inaccurate Data
-          </button>
-          <button
-            className="rectangle-button"
-            onClick={() => navigate(`/explanation`)}
-          >
-            <IoCloudUploadOutline size={113} /> Data Upload Failure
-          </button>
-        </>
-      )}
-
       {category === "camera" && (
         <>
           <button
@@ -74,9 +49,11 @@ function ServiceDetails() {
           </button>
           <button
             className="rectangle-button"
-            onClick={() => navigate(`/explanation`)}
+            onClick={() =>
+              navigate(`/services/${category}/cant-ping-camera/qr`)
+            }
           >
-            <FaSeedling size={113} /> Cannot Detect Crops/Rows
+            <IoCloseCircleOutline size={113} /> Camera not Working
           </button>
         </>
       )}
