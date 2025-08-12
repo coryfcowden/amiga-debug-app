@@ -18,7 +18,7 @@ function ImmediateAssistance() {
         subcategory: "Not Following",
         urgent: true,
         timestamp: new Date().toISOString(),
-        location: "36°55′12″N 121°45′49″W",
+        location: "36N 121W",
         motorData: "ESTOPPED",
       });
       alert("Server response: " + res);

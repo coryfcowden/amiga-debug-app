@@ -1,18 +1,11 @@
-import { FaSeedling } from "react-icons/fa";
 import {
   IoCameraReverseOutline,
   IoCloseCircleOutline,
-  IoCloudUploadOutline,
   IoHelpCircleOutline,
   IoLocateOutline,
   IoNavigateOutline,
 } from "react-icons/io5";
-import {
-  VscArrowLeft,
-  VscChromeClose,
-  VscDatabase,
-  VscFileBinary,
-} from "react-icons/vsc";
+import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
 
 function ServiceDetails() {

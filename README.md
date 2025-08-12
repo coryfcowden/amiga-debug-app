@@ -11,6 +11,7 @@
 - installed protoc
 - using envoy proxy
 - using Docker
+- installed protoc-gen-ts
 
 using:
 
