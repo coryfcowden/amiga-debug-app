@@ -8,6 +8,21 @@ function Explanation() {
   const [userDescription, setUserDescription] = React.useState<string>("");
   const [userEmail, setUserEmail] = React.useState<string>("");
 
+  const handleContinue = () => {
+    if (!userEmail) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(userEmail.trim())) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    navigate("/immediate-assistance");
+  };
+
   return (
     <div className="popup-container">
       <button className="back-button" onClick={() => navigate(-1)}>
@@ -38,7 +53,7 @@ function Explanation() {
 
       <button
         className="explanation-continue-button"
-        onClick={() => navigate("/immediate-assistance")}
+        onClick={() => handleContinue()}
       >
         Continue <VscArrowRight size={40} />
       </button>
