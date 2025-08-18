@@ -6,9 +6,11 @@ import {
   IoHelpCircleOutline,
   IoShareSocialOutline,
 } from "react-icons/io5";
+import { useIssueReport } from "../context/IssueReportContext";
 
 function Autoplot() {
   const navigate = useNavigate();
+  const { setIssue } = useIssueReport();
 
   return (
     <div className="popup-container">
@@ -23,7 +25,14 @@ function Autoplot() {
       <h1 className="popup-title">Report Issue</h1>
       <button
         className="rectangle-button"
-        onClick={() => navigate("/explanation")}
+        onClick={() => {
+          setIssue((prev) => ({
+            ...prev,
+            category: "autoplot",
+            subCategory: "path not smooth",
+          }));
+          navigate("/explanation");
+        }}
       >
         <IoAnalyticsOutline size={106} />
         <IoAnalyticsOutline size={106} />
@@ -32,7 +41,14 @@ function Autoplot() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/autoplot/robot-off-path/qr")}
+        onClick={() => {
+          setIssue((prev) => ({
+            ...prev,
+            category: "autoplot",
+            subCategory: "robot off path",
+          }));
+          navigate("/autoplot/robot-off-path/qr");
+        }}
       >
         <IoShareSocialOutline size={106} />
         <IoHelpCircleOutline size={78} />
@@ -41,7 +57,14 @@ function Autoplot() {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/autoplot/robot-will-not-follow/qr")}
+        onClick={() => {
+          setIssue((prev) => ({
+            ...prev,
+            category: "autoplot",
+            subCategory: "robot will not follow",
+          }));
+          navigate("/autoplot/robot-will-not-follow/qr");
+        }}
       >
         <VscArrowRight size={113} />
         <IoCloseCircleOutline size={72} />

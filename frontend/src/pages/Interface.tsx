@@ -1,9 +1,15 @@
-import { IoCloseCircleOutline, IoHelpCircleOutline } from "react-icons/io5";
+import {
+  IoCloseCircleOutline,
+  IoHelpCircleOutline,
+  IoAlertCircleOutline,
+} from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate, Outlet } from "react-router-dom";
+import { useIssueReport } from "../context/IssueReportContext";
 
 function Interface({}) {
   const navigate = useNavigate();
+  const { setIssue } = useIssueReport();
 
   return (
     <div className="popup-container">
@@ -19,16 +25,44 @@ function Interface({}) {
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/interface/apps-disappeared/qr")}
+        onClick={() => {
+          setIssue((prev) => ({
+            ...prev,
+            category: "interface",
+            subCategory: "app(s) disappeared",
+          }));
+          navigate("/interface/apps-disappeared/qr");
+        }}
       >
         <IoHelpCircleOutline size={113} /> App(s) Disappeared
       </button>
 
       <button
         className="rectangle-button"
-        onClick={() => navigate("/interface/unresponsive/qr")}
+        onClick={() => {
+          setIssue((prev) => ({
+            ...prev,
+            category: "interface",
+            subCategory: "unresponsive",
+          }));
+          navigate("/interface/unresponsive/qr");
+        }}
       >
         <IoCloseCircleOutline size={113} /> Unresponsive
+      </button>
+
+      <button
+        className="rectangle-button"
+        onClick={() => {
+          setIssue((prev) => ({
+            ...prev,
+            category: "interface",
+            subCategory: "other",
+          }));
+          navigate(`/explanation`);
+        }}
+      >
+        <IoAlertCircleOutline size={113} /> Other
       </button>
 
       <Outlet />

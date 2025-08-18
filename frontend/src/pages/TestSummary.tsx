@@ -8,10 +8,6 @@ function Summary() {
 
   return (
     <div className="popup-container">
-      <button className="back-button" onClick={() => navigate(-1)}>
-        <VscArrowLeft /> Back
-      </button>
-
       <button
         className="exit-button"
         onClick={() => {
