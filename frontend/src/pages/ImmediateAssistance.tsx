@@ -3,10 +3,12 @@ import { IoCheckmarkCircleOutline, IoReceiptOutline } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 //import { issueReport } from "../grpc/issueReport";
+import { useIssueReport } from "../context/IssueReportContext";
 
 function ImmediateAssistance() {
   const [outcome, setOutcome] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { setIssue } = useIssueReport();
 
   //right now set up with dummy data to test grpc
   // const handleSendReport = async () => {
@@ -48,26 +50,30 @@ function ImmediateAssistance() {
             Do you need immediate assistance?
           </h1>
 
-          {/* <button
+          <button
             className="assistance-yes-button"
             onClick={async () => {
-              await handleSendReport();
+              setIssue((prev) => ({ ...prev, urgent: 1 }));
+              //TODO: trigger nodemailer/grpc here
+              // await handleSendReport();
               setOutcome("yes");
             }}
-          > 
+          >
             <strong>Yes</strong>
             <IoCheckmarkCircleOutline size={72} />
-           </button> */}
+          </button>
 
-          {/* <button
+          <button
             className="assistance-no-button"
             onClick={async () => {
-              await handleSendReport();
+              setIssue((prev) => ({ ...prev, urgent: 2 }));
+              //TODO: trigger nodemailer/grpc here
+              // await handleSendReport();
               setOutcome("no");
             }}
           >
             <IoReceiptOutline size={72} /> No, just report issue
-          </button> */}
+          </button>
         </>
       )}
 
@@ -75,6 +81,13 @@ function ImmediateAssistance() {
         <>
           <h1 className="assistance-report-text">
             A Farm-ng member will reach out to you ASAP!
+            {/* BUTTON TO TEST EMAIL PREVIEW */}
+            <button
+              className="rectangle-button"
+              onClick={() => navigate("/summary")}
+            >
+              Go to Summary Page
+            </button>
           </h1>
         </>
       )}
@@ -82,6 +95,13 @@ function ImmediateAssistance() {
       {outcome === "no" && (
         <>
           <h1 className="assistance-report-text">Issue reported!</h1>
+          {/* BUTTON TO TEST EMAIL PREVIEW */}
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/summary")}
+          >
+            Go to Summary Page
+          </button>
         </>
       )}
     </div>

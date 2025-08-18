@@ -21,7 +21,6 @@ function Autoplot() {
       </button>
 
       <h1 className="popup-title">Report Issue</h1>
-
       <button
         className="rectangle-button"
         onClick={() => navigate("/explanation")}
@@ -48,7 +47,6 @@ function Autoplot() {
         <IoCloseCircleOutline size={72} />
         Robot will not Follow
       </button>
-
       <Outlet />
     </div>
   );

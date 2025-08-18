@@ -1,6 +1,7 @@
 import { IoCameraOutline, IoNavigateOutline } from "react-icons/io5";
-import { VscArrowLeft, VscChromeClose, VscFileBinary } from "react-icons/vsc";
+import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
+import { FaNetworkWired } from "react-icons/fa";
 
 function Services() {
   const navigate = useNavigate();
@@ -24,9 +25,9 @@ function Services() {
         <>
           <button
             className="rectangle-button"
-            onClick={() => navigate("/services/recorder")}
+            onClick={() => navigate("/services/canbus")}
           >
-            <VscFileBinary size={113} /> Recorder
+            <FaNetworkWired size={103} /> CAN Bus
           </button>
           <button
             className="rectangle-button"

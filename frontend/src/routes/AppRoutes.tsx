@@ -11,6 +11,7 @@ import MiscDetails from "../pages/MiscDetails";
 import ImmediateAssistance from "../pages/ImmediateAssistance";
 import Background from "../pages/Background";
 import Explanation from "../pages/Explanation";
+import Summary from "../pages/TestSummary";
 
 function AppRoutes() {
   return (
@@ -39,6 +40,9 @@ function AppRoutes() {
       <Route path="/explanation" element={<Explanation />}></Route>
 
       <Route path="/immediate-assistance" element={<ImmediateAssistance />} />
+
+      {/* TEST to preview email: TestSummary page */}
+      <Route path="/summary" element={<Summary />} />
     </Routes>
   );
 }

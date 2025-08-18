@@ -1,25 +1,26 @@
 import React from "react";
 import { VscArrowLeft, VscArrowRight, VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
+import { useIssueReport } from "../context/IssueReportContext";
 
 function Explanation() {
   const navigate = useNavigate();
 
-  const [userDescription, setUserDescription] = React.useState<string>("");
-  const [userEmail, setUserEmail] = React.useState<string>("");
+  // const [userDescription, setUserDescription] = React.useState<string>("");
+  // const [userEmail, setUserEmail] = React.useState<string>("");
+  const { issue, setIssue } = useIssueReport();
 
   const handleContinue = () => {
-    if (!userEmail) {
+    if (!issue.userEmail) {
       alert("Please enter your email address.");
       return;
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(userEmail.trim())) {
+    if (!emailPattern.test(issue.userEmail.trim())) {
       alert("Please enter a valid email address.");
       return;
     }
-
     navigate("/immediate-assistance");
   };
 
@@ -40,22 +41,26 @@ function Explanation() {
       <textarea
         className="explanation-textarea-1"
         placeholder=" Describe your issue in more detail"
-        onChange={(e) => setUserDescription(e.target.value)}
+        onChange={(e) =>
+          setIssue((prev) => ({ ...prev, userDescription: e.target.value }))
+        }
       />
 
-      <h1 className="explanation-title">Where can we contact you?</h1>
+      <h1 className="explanation-title">Where can we contact you? *</h1>
 
       <textarea
         className="explanation-textarea-2"
         placeholder=" example@gmail.com"
-        onChange={(e) => setUserEmail(e.target.value)}
+        onChange={(e) =>
+          setIssue((prev) => ({ ...prev, userEmail: e.target.value }))
+        }
       />
 
       <button
         className="explanation-continue-button"
         onClick={() => handleContinue()}
       >
-        Continue <VscArrowRight size={40} />
+        <strong>Continue</strong> <VscArrowRight size={40} />
       </button>
     </div>
   );

@@ -1,4 +1,4 @@
-import { FaFilter, FaNetworkWired } from "react-icons/fa";
+import { FaFilter } from "react-icons/fa";
 import { IoHelpCircleOutline, IoWifiSharp } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate, Outlet, useParams } from "react-router-dom";
@@ -23,34 +23,24 @@ function Misc() {
 
       {!miscSelected && (
         <>
-          <div className="options-row">
-            <button
-              className="square-button"
-              onClick={() => navigate("/misc/canbus")}
-            >
-              <FaNetworkWired size={144} /> CAN Bus
-            </button>
-            <button
-              className="square-button"
-              onClick={() => navigate("/misc/filter")}
-            >
-              <FaFilter size={120} /> Filter
-            </button>
-          </div>
-          <div className="options-row">
-            <button
-              className="square-button"
-              onClick={() => navigate("/misc/wifi")}
-            >
-              <IoWifiSharp size={144} /> Wifi
-            </button>
-            <button
-              className="square-button"
-              onClick={() => navigate("/misc/other")}
-            >
-              <IoHelpCircleOutline size={144} /> Other
-            </button>
-          </div>
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/misc/filter")}
+          >
+            <FaFilter size={80} /> Filter
+          </button>
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/misc/wifi")}
+          >
+            <IoWifiSharp size={113} /> Wifi
+          </button>
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/misc/other")}
+          >
+            <IoHelpCircleOutline size={113} /> Other
+          </button>
         </>
       )}
 

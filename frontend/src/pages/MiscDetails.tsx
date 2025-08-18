@@ -23,29 +23,6 @@ function MiscDetails() {
 
       <h1 className="popup-title">Report Issue</h1>
 
-      {category === "canbus" && (
-        <>
-          <button
-            className="rectangle-button"
-            onClick={() => navigate(`/explanation`)}
-          >
-            <IoCloseCircleOutline size={153} /> Not Communicating with Module(s)
-          </button>
-          <button
-            className="rectangle-button"
-            onClick={() => navigate(`/misc/${category}/canbus-no-power/qr`)}
-          >
-            <IoAlertCircleOutline size={83} /> No Power
-          </button>
-          <button
-            className="rectangle-button"
-            onClick={() => navigate(`/misc/${category}/canbus-error/qr`)}
-          >
-            <IoHelpCircleOutline size={113} /> Unknown CAN Bus Error
-          </button>
-        </>
-      )}
-
       {category === "filter" && (
         <>
           <button

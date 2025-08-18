@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import {
-  VscChromeClose,
-  VscFileBinary,
-  VscTerminalPowershell,
-} from "react-icons/vsc";
+import { VscChromeClose, VscTerminalPowershell } from "react-icons/vsc";
 import {
   IoAnalyticsOutline,
   IoCameraOutline,
+  IoHelpCircleOutline,
   IoNavigateOutline,
   IoSettingsOutline,
   IoWifiSharp,
@@ -57,18 +54,18 @@ function Home() {
             onClick={() => navigate("/services")}
           >
             <span>
-              <VscFileBinary size={72} />
+              <FaNetworkWired size={70} />
               <IoCameraOutline size={72} />
-              <IoNavigateOutline size={72} />
+              <IoNavigateOutline size={60} />
             </span>
             Services
           </button>
 
           <button className="square-button" onClick={() => navigate("/misc")}>
             <span>
-              <FaNetworkWired size={72} />
               <IoWifiSharp size={72} />
               <FaFilter size={56} />
+              <IoHelpCircleOutline size={65} />
             </span>
             Misc.
           </button>
