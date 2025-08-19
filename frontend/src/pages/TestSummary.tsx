@@ -1,5 +1,5 @@
 import { useIssueReport } from "../context/IssueReportContext";
-import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
+import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 
 function Summary() {
@@ -47,13 +47,13 @@ function Summary() {
       <button
         className="rectangle-button"
         onClick={() => {
-          alert(
+          console.log(
             "This is what I'd send to gRPC/Nodemailer:\n\n" +
               JSON.stringify(issue, null, 2),
           );
         }}
       >
-        Test Send (console log)
+        See JSON
       </button>
     </div>
   );

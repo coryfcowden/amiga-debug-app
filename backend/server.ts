@@ -1,6 +1,9 @@
 import http from "http";
+import dotenv from "dotenv";
 
 const port = process.env.PORT || 9090;
+
+dotenv.config();
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;

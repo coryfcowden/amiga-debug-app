@@ -152,7 +152,7 @@ function MiscDetails() {
               navigate(`/explanation`);
             }}
           >
-            <IoCloseCircleOutline size={113} /> Software/Firmware Update Failure
+            <IoCloseCircleOutline size={153} /> Software/Firmware Update Failure
           </button>
         </>
       )}

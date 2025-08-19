@@ -67,7 +67,7 @@ function ServiceDetails() {
               navigate(`/services/${category}/cant-ping-camera/qr`);
             }}
           >
-            <IoCloseCircleOutline size={113} /> Camera not Working
+            <IoAlertCircleOutline size={103} /> Can't Ping Camera
           </button>
         </>
       )}

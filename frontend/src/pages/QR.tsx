@@ -48,9 +48,9 @@ function QR() {
       url: "https://discourse.farm-ng.com/t/gps-values-wandering-until-divergence/407",
       description: "Inaccurate GPS Coordinates",
     },
-    "cant-ping-cameras": {
+    "cant-ping-camera": {
       url: "https://amiga.farm-ng.com/docs/intelligence-kit/overview-intel#poe-switch",
-      description: "Can't Ping Cameras",
+      description: "Can't Ping Camera",
     },
     // Misc
     "canbus-no-power": {

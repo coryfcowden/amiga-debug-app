@@ -1,4 +1,3 @@
-import React from "react";
 import { VscArrowLeft, VscArrowRight, VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import { useIssueReport } from "../context/IssueReportContext";
@@ -6,8 +5,6 @@ import { useIssueReport } from "../context/IssueReportContext";
 function Explanation() {
   const navigate = useNavigate();
 
-  // const [userDescription, setUserDescription] = React.useState<string>("");
-  // const [userEmail, setUserEmail] = React.useState<string>("");
   const { issue, setIssue } = useIssueReport();
 
   const handleContinue = () => {

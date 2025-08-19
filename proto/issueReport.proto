@@ -12,6 +12,7 @@ message issueRequest {
     string category = 3;
     string subCategory = 4;
     bool urgent = 5;
+    //add link?
 
     string timestamp = 6;
     string location = 7;
