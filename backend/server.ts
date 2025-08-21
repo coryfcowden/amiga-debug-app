@@ -1,17 +1,51 @@
-import http from "http";
-import dotenv from "dotenv";
+import * as grpc from "@grpc/grpc-js";
+import * as protoLoader from "@grpc/proto-loader";
+import path from "path";
 
-const port = process.env.PORT || 9090;
+const PROTO_PATH = path.join(__dirname, "../proto/issueReport.proto");
 
-dotenv.config();
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World\n");
-  console.log("Hello world!");
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+  keepCase: true,
+  longs: String,
+  enums: String,
+  defaults: true,
+  oneofs: true,
 });
 
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+const protoDescriptor = grpc.loadPackageDefinition(packageDefinition) as any;
+const issuePackage = protoDescriptor.issue;
+
+const issueReporterImpl = {
+  ReportIssue: (
+    call: grpc.ServerUnaryCall<any, any>,
+    callback: grpc.sendUnaryData<any>,
+  ) => {
+    console.log("Received ReportIssue request:", call.request);
+
+    callback(null, {
+      success: true,
+      message: `Issue reported by ${call.request.userEmail}`,
+    });
+  },
+};
+
+function main() {
+  const server = new grpc.Server();
+
+  server.addService(issuePackage.issueReporter.service, issueReporterImpl);
+
+  const addr = "0.0.0.0:9090";
+  server.bindAsync(
+    addr,
+    grpc.ServerCredentials.createInsecure(),
+    (err, port) => {
+      if (err) {
+        console.error("Server binding failed:", err);
+        return;
+      }
+      console.log(`gRPC server running at ${addr}`);
+    },
+  );
+}
+
+main();

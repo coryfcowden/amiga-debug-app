@@ -13,25 +13,37 @@ import type { RpcOptions } from "@protobuf-ts/runtime-rpc";
  * @generated from protobuf service issue.issueReporter
  */
 export interface IissueReporterClient {
-    /**
-     * @generated from protobuf rpc: ReportIssue
-     */
-    reportIssue(input: issueRequest, options?: RpcOptions): UnaryCall<issueRequest, issueResponse>;
+  /**
+   * @generated from protobuf rpc: ReportIssue
+   */
+  reportIssue(
+    input: issueRequest,
+    options?: RpcOptions,
+  ): UnaryCall<issueRequest, issueResponse>;
 }
 /**
  * @generated from protobuf service issue.issueReporter
  */
 export class issueReporterClient implements IissueReporterClient, ServiceInfo {
-    typeName = issueReporter.typeName;
-    methods = issueReporter.methods;
-    options = issueReporter.options;
-    constructor(private readonly _transport: RpcTransport) {
-    }
-    /**
-     * @generated from protobuf rpc: ReportIssue
-     */
-    reportIssue(input: issueRequest, options?: RpcOptions): UnaryCall<issueRequest, issueResponse> {
-        const method = this.methods[0], opt = this._transport.mergeOptions(options);
-        return stackIntercept<issueRequest, issueResponse>("unary", this._transport, method, opt, input);
-    }
+  typeName = issueReporter.typeName;
+  methods = issueReporter.methods;
+  options = issueReporter.options;
+  constructor(private readonly _transport: RpcTransport) {}
+  /**
+   * @generated from protobuf rpc: ReportIssue
+   */
+  reportIssue(
+    input: issueRequest,
+    options?: RpcOptions,
+  ): UnaryCall<issueRequest, issueResponse> {
+    const method = this.methods[0],
+      opt = this._transport.mergeOptions(options);
+    return stackIntercept<issueRequest, issueResponse>(
+      "unary",
+      this._transport,
+      method,
+      opt,
+      input,
+    );
+  }
 }
