@@ -2,33 +2,39 @@ import { useState } from "react";
 import { IoCheckmarkCircleOutline, IoReceiptOutline } from "react-icons/io5";
 import { VscArrowLeft, VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
-//import { issueReport } from "../grpc/issueReport";
 import { useIssueReport } from "../context/IssueReportContext";
+import { GrpcWebFetchTransport } from "@protobuf-ts/grpcweb-transport";
+import { issueReporterClient } from "../grpc/issueReport.client";
 
 function ImmediateAssistance() {
   const [outcome, setOutcome] = useState<string | null>(null);
   const navigate = useNavigate();
   const { setIssue } = useIssueReport();
+  const transport = new GrpcWebFetchTransport({
+    baseUrl: "http://localhost:8080",
+  });
+  const client = new issueReporterClient(transport);
 
-  //right now set up with dummy data to test grpc
-  // const handleSendReport = async () => {
-  //   try {
-  //     const res = await issueReport({
-  //       userEmail: "test@example.com",
-  //       userDescription: "Test issue from frontend",
-  //       category: "Autoplot",
-  //       subcategory: "Not Following",
-  //       urgent: true,
-  //       timestamp: new Date().toISOString(),
-  //       location: "36N 121W",
-  //       motorData: "ESTOPPED",
-  //     });
-  //     alert("Server response: " + res);
-  //   } catch (err) {
-  //     console.error("gRPC call failed:", err);
-  //     alert("Failed to report issue");
-  //   }
-  // };
+  // right now set up with dummy data to test gRPC
+  async function handleSendReport() {
+    try {
+      const response = await client.reportIssue({
+        userEmail: "test@example.com",
+        userDescription: "Test issue from frontend",
+        category: "Autoplot",
+        subCategory: "Not Following",
+        urgent: true,
+        timestamp: new Date().toISOString(),
+        location: "36N 121W",
+        motorData: "ESTOPPED",
+      });
+      console.log("Server response:", response);
+    } catch (error) {
+      console.error("gRPC call failed:", error);
+      alert("Failed to report issue");
+      return;
+    }
+  }
 
   return (
     <div className="popup-container">
@@ -55,7 +61,7 @@ function ImmediateAssistance() {
             onClick={async () => {
               setIssue((prev) => ({ ...prev, urgent: 1 }));
               //TODO: trigger nodemailer/grpc here
-              // await handleSendReport();
+              await handleSendReport();
               setOutcome("yes");
             }}
           >
@@ -68,7 +74,7 @@ function ImmediateAssistance() {
             onClick={async () => {
               setIssue((prev) => ({ ...prev, urgent: 2 }));
               //TODO: trigger nodemailer/grpc here
-              // await handleSendReport();
+              await handleSendReport();
               setOutcome("no");
             }}
           >
@@ -80,27 +86,29 @@ function ImmediateAssistance() {
       {outcome === "yes" && (
         <>
           <h1 className="assistance-report-text">
-            A Farm-ng member will reach out to you ASAP!
-            {/* BUTTON TO TEST EMAIL PREVIEW */}
-            <button
-              className="rectangle-button"
-              onClick={() => navigate("/summary")}
-            >
-              Go to Summary Page
-            </button>
+            A Farm-ng member will reach out to you ASAP!{" "}
           </h1>
+
+          {/* BUTTON TO TEST EMAIL PREVIEW */}
+          <button
+            className="rectangle-button"
+            onClick={() => navigate("/summary")}
+          >
+            Preview Email
+          </button>
         </>
       )}
 
       {outcome === "no" && (
         <>
           <h1 className="assistance-report-text">Issue reported!</h1>
+
           {/* BUTTON TO TEST EMAIL PREVIEW */}
           <button
             className="rectangle-button"
             onClick={() => navigate("/summary")}
           >
-            Go to Summary Page
+            Preview Email
           </button>
         </>
       )}
