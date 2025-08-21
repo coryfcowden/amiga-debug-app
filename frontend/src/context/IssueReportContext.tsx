@@ -1,7 +1,7 @@
 // "global" variables = React Context
 import React, { createContext, useContext, useState } from "react";
 
-type urgent = 1 | 2 | null;
+type urgent = true | false | null;
 
 export interface IssueReport {
   userEmail: string;

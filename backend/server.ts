@@ -11,7 +11,6 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   defaults: true,
   oneofs: true,
 });
-
 const protoDescriptor = grpc.loadPackageDefinition(packageDefinition) as any;
 const issuePackage = protoDescriptor.issue;
 
@@ -35,17 +34,13 @@ function main() {
   server.addService(issuePackage.issueReporter.service, issueReporterImpl);
 
   const addr = "0.0.0.0:9090";
-  server.bindAsync(
-    addr,
-    grpc.ServerCredentials.createInsecure(),
-    (err, port) => {
-      if (err) {
-        console.error("Server binding failed:", err);
-        return;
-      }
-      console.log(`gRPC server running at ${addr}`);
-    },
-  );
+  server.bindAsync(addr, grpc.ServerCredentials.createInsecure(), (err) => {
+    if (err) {
+      console.error("Server binding failed:", err);
+      return;
+    }
+    console.log(`gRPC server running at ${addr}`);
+  });
 }
 
 main();

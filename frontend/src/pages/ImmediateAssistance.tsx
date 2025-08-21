@@ -5,25 +5,25 @@ import { useNavigate } from "react-router-dom";
 import { useIssueReport } from "../context/IssueReportContext";
 import { GrpcWebFetchTransport } from "@protobuf-ts/grpcweb-transport";
 import { issueReporterClient } from "../grpc/issueReport.client";
+import { IssueReport } from "../context/IssueReportContext";
 
 function ImmediateAssistance() {
   const [outcome, setOutcome] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { setIssue } = useIssueReport();
+  const { issue, setIssue } = useIssueReport();
   const transport = new GrpcWebFetchTransport({
     baseUrl: "http://localhost:8080",
   });
   const client = new issueReporterClient(transport);
 
-  // right now set up with dummy data to test gRPC
-  async function handleSendReport() {
+  async function handleSendReport(updated: IssueReport) {
     try {
       const response = await client.reportIssue({
-        userEmail: "test@example.com",
-        userDescription: "Test issue from frontend",
-        category: "Autoplot",
-        subCategory: "Not Following",
-        urgent: true,
+        userEmail: updated.userEmail || "",
+        userDescription: updated.userDescription || "",
+        category: updated.category ?? "",
+        subCategory: updated.subCategory ?? "",
+        urgent: updated.urgent ?? false,
         timestamp: new Date().toISOString(),
         location: "36N 121W",
         motorData: "ESTOPPED",
@@ -32,7 +32,6 @@ function ImmediateAssistance() {
     } catch (error) {
       console.error("gRPC call failed:", error);
       alert("Failed to report issue");
-      return;
     }
   }
 
@@ -59,9 +58,9 @@ function ImmediateAssistance() {
           <button
             className="assistance-yes-button"
             onClick={async () => {
-              setIssue((prev) => ({ ...prev, urgent: 1 }));
-              //TODO: trigger nodemailer/grpc here
-              await handleSendReport();
+              const updated = { ...issue, urgent: true };
+              setIssue(updated);
+              await handleSendReport(updated);
               setOutcome("yes");
             }}
           >
@@ -72,9 +71,9 @@ function ImmediateAssistance() {
           <button
             className="assistance-no-button"
             onClick={async () => {
-              setIssue((prev) => ({ ...prev, urgent: 2 }));
-              //TODO: trigger nodemailer/grpc here
-              await handleSendReport();
+              const updated = { ...issue, urgent: false };
+              setIssue(updated);
+              await handleSendReport(updated);
               setOutcome("no");
             }}
           >
@@ -88,28 +87,12 @@ function ImmediateAssistance() {
           <h1 className="assistance-report-text">
             A Farm-ng member will reach out to you ASAP!{" "}
           </h1>
-
-          {/* BUTTON TO TEST EMAIL PREVIEW */}
-          <button
-            className="rectangle-button"
-            onClick={() => navigate("/summary")}
-          >
-            Preview Email
-          </button>
         </>
       )}
 
       {outcome === "no" && (
         <>
           <h1 className="assistance-report-text">Issue reported!</h1>
-
-          {/* BUTTON TO TEST EMAIL PREVIEW */}
-          <button
-            className="rectangle-button"
-            onClick={() => navigate("/summary")}
-          >
-            Preview Email
-          </button>
         </>
       )}
     </div>
