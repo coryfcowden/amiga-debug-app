@@ -13,11 +13,17 @@ function Explanation() {
       return;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(issue.userEmail.trim())) {
+    const sanitizedEmail = issue.userEmail.trim().replace(/[\r\n\t]/g, "");
+
+    const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!emailPattern.test(sanitizedEmail)) {
       alert("Please enter a valid email address.");
       return;
     }
+
+    setIssue((prev) => ({ ...prev, userEmail: sanitizedEmail }));
+
     navigate("/immediate-assistance");
   };
 
