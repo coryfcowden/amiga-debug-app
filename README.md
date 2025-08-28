@@ -74,7 +74,7 @@ cd frontend
 npm start
 ```
 
-The app will be available at http://localhost:3000 in your browser.
+The app will be available at http://localhost:5173 in your browser.
 
 **Note:** In the production/deployed environment, the frontend is served via the Amiga brain using FastAPI and Docker. The above commands are for local development.
 
