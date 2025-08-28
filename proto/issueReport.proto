@@ -12,11 +12,14 @@ message issueRequest {
     string category = 3;
     string subCategory = 4;
     bool urgent = 5;
-    //add link?
-
+    //add qrLink? (ignore)
+      
     string timestamp = 6;
     string location = 7;
-    string motorData = 8;
+
+    string machineId = 8;
+    // amigaID
+    // other actual motor data expanded later
 }
 
 message issueResponse {

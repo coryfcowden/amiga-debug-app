@@ -44,9 +44,9 @@ export interface issueRequest {
      */
     location: string;
     /**
-     * @generated from protobuf field: string motorData = 8
+     * @generated from protobuf field: string machineId = 8
      */
-    motorData: string;
+    machineId: string;
 }
 /**
  * @generated from protobuf message issue.issueResponse
@@ -72,7 +72,7 @@ class issueRequest$Type extends MessageType<issueRequest> {
             { no: 5, name: "urgent", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 6, name: "timestamp", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 7, name: "location", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 8, name: "motorData", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 8, name: "machineId", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<issueRequest>): issueRequest {
@@ -84,7 +84,7 @@ class issueRequest$Type extends MessageType<issueRequest> {
         message.urgent = false;
         message.timestamp = "";
         message.location = "";
-        message.motorData = "";
+        message.machineId = "";
         if (value !== undefined)
             reflectionMergePartial<issueRequest>(this, message, value);
         return message;
@@ -115,8 +115,8 @@ class issueRequest$Type extends MessageType<issueRequest> {
                 case /* string location */ 7:
                     message.location = reader.string();
                     break;
-                case /* string motorData */ 8:
-                    message.motorData = reader.string();
+                case /* string machineId */ 8:
+                    message.machineId = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -151,9 +151,9 @@ class issueRequest$Type extends MessageType<issueRequest> {
         /* string location = 7; */
         if (message.location !== "")
             writer.tag(7, WireType.LengthDelimited).string(message.location);
-        /* string motorData = 8; */
-        if (message.motorData !== "")
-            writer.tag(8, WireType.LengthDelimited).string(message.motorData);
+        /* string machineId = 8; */
+        if (message.machineId !== "")
+            writer.tag(8, WireType.LengthDelimited).string(message.machineId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

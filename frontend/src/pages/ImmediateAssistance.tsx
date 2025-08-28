@@ -26,7 +26,7 @@ function ImmediateAssistance() {
         urgent: updated.urgent ?? false,
         timestamp: new Date().toISOString(),
         location: "36N 121W",
-        motorData: "ESTOPPED",
+        machineId: "ESTOPPED",
       });
       console.log("Server response:", response);
     } catch (error) {
