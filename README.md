@@ -36,7 +36,7 @@ The Amiga Debug App allows users to report issues directly from the Amiga robot.
 ### **1. Clone the repository:**
 
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/coryfcowden/amiga-debug-app.git>
 cd amiga-debug-app
 ```
 
